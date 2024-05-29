@@ -1,6 +1,6 @@
 import './style.css'
-import { setupCounter } from './counter.js'
 import './node_modules/bootstrap/dist/css/bootstrap.min.css'
+import './src/components/materiaPForm'
 
 const reg = document.getElementById('reg')
 const inf = document.getElementById('inf')
