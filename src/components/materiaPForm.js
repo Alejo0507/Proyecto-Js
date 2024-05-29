@@ -12,6 +12,27 @@ export class MateriaPrimaFormulario extends LitElement {
     }
 
     static styles = css`
+
+    .modal-content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    #calcProdForm {
+        display: flex;
+        gap: 20px;
+    }
+
+    .cantidad-productos-container, .horas-totales-container {
+        display: flex;
+        flex-direction: column;
+        width: 20rem;
+        align-items: center;
+        gap: 5px;
+        font-size: 20px;
+    }
     .modal {
         display: none; /* Ocultar modal por defecto */
         position: fixed;
@@ -71,8 +92,8 @@ export class MateriaPrimaFormulario extends LitElement {
             <div class="modal-content">
                 <span @click=${this.closeModal} id="closeModalBtn" class="close">&times;</span>
                 <p>
-                    <h2>Formulario Básico</h2>
-                        <form id="mpForm" action="https://665630689f970b3b36c49525.mockapi.io/materiaPrima" method="POST">
+                    <h2>Gestión de materia prima</h2>
+                        <form id="mpForm">
 
                             <label for="idmateria">Id Materia Prima:</label>
                             <input type="number" id="idmateria" name="idMateriaPrima" required><br><br>
