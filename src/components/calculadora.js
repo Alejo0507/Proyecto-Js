@@ -1,6 +1,6 @@
 import { LitElement, html, css } from "lit";
 
-export class calculadoraProductividad extends LitElement {
+export class calculadoraEficiencia extends LitElement {
     constructor() {
         super();
     }
@@ -26,6 +26,7 @@ export class calculadoraProductividad extends LitElement {
         padding: 20px;
         border: 1px solid #888;
         width: 80%;
+        height: 60%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         animation-name: modalopen;
         animation-duration: 0.4s;
@@ -61,14 +62,25 @@ export class calculadoraProductividad extends LitElement {
                     <form id="calcProdForm">
                         <div class="cantidad-productos-container">
                             <label for="totalProductos">Cantidad total de productos terminados</label>
-                            <input type="number" name="totalProductos">
+                            <input type="number" id="total" name="totalProductos">
                         </div>
 
                         <div class="horas-totales-container">
                             <label for="horasTotProduct">Horas totales de producción</label>
-                            <input type="number" name="horasTotProduct">
+                            <input type="number" id="horas" name="horasTotProduct">
                         </div>
 
+                        <div class="costos-totales">
+                            <label for="costosOperativosTotales">Costos operativos totales</label>
+                            <input type="number" id="costos" name="costosOperativosTotales">
+                        </div>
+
+                        <div class=productos-defectuosos">
+                            <label for="productosDefectuosos">Número de productos defectuosos</label>
+                            <input type="number" id="defectos" name="productosDefectuosos">
+                        </div>
+
+                        <input type="submit" id="enviar-form">
                     </form>
                 </p>
             </div>
@@ -77,4 +89,4 @@ export class calculadoraProductividad extends LitElement {
     }
 }
 
-customElements.define('calc-productividad', calculadoraProductividad)
+customElements.define('calc-eficiencia', calculadoraEficiencia)

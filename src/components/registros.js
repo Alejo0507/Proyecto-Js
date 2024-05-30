@@ -2,6 +2,8 @@
 
 const registro = document.getElementById('inventario')
 const produccion=document.getElementById('produccion')
+const registro = document.getElementById('inventario')
+const produccion=document.getElementById('produccion')
 let stock={
 
 }
@@ -69,6 +71,7 @@ registro.addEventListener('click', (event) => {
 
     event.preventDefault();
 });
+
 
 
 document.addEventListener('click', (event) => {
