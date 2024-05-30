@@ -6,7 +6,15 @@ export class calculadoraManoDeObra extends LitElement {
     }
 
     static styles = css`
+    .input-container{
+        border-radius:5px;
+        height:25px;
+        margin:10px;
+        
+    }
+   
     .modal {
+        
         display: none; /* Ocultar modal por defecto */
         position: fixed;
         z-index: 1;
@@ -21,11 +29,18 @@ export class calculadoraManoDeObra extends LitElement {
         flex-direction: column;
     }
     .modal-content {
-        background-color: #fefefe;
+        color:white;
+        border-radius:20px;
+    
+        background: linear-gradient(
+            to bottom right,
+            rgb(141, 30, 168),
+            rgba(120, 50, 100)  
+          );
         margin: 15% auto;
         padding: 20px;
         border: 1px solid #888;
-        width: 80%;
+        width: 60%;
         height: 60%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         animation-name: modalopen;
@@ -58,6 +73,14 @@ export class calculadoraManoDeObra extends LitElement {
             font-size: 40px;
         }
     }
+
+    #calcForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text: center;
+        justify-content: center;
+    }
     `
 
     
@@ -69,7 +92,7 @@ export class calculadoraManoDeObra extends LitElement {
             <div class="modal-content">
                 <span id="closeModalBtn" class="close">&times;</span>
                 <p>
-                    <h1>Calcular eficiencia operativa</h1>
+                    <h1>Calcular costos de mano de obra</h1>
                     <div id="form-container">
                         <form id="calcForm">
                             <div class="input-container">
@@ -99,7 +122,7 @@ export class calculadoraManoDeObra extends LitElement {
                     <div id="resultado-container">
 
                         <h1>Su empresa tiene un total de costos de mano de obra de:</h1>
-                        <p><span id="resultado">0  </span> $</p>
+                        <p><span id="resultado">0</span></p>
                         <button id="volverACalcular">Volver a calcular</button>
                     </div>
                 </p>
