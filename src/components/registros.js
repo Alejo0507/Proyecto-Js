@@ -11,6 +11,7 @@ let stock={
 }
 let Producciones ={
 
+
 }
 
 registro.addEventListener('click', (event) => {
@@ -43,15 +44,28 @@ registro.addEventListener('click', (event) => {
                 <option value="Metros">Metros</option>
                 <option value="Centimetros">Centimetros</option>
                 </select>
+                <select class="form-select" id="unidadMedida">
+                <option selected>Choose...</option>
+                <option value="Metros">Metros</option>
+                <option value="Centimetros">Centimetros</option>
+                </select>
             </div>
             <div class="col-md-2">
                 <label for="inputCity" class="form-label">Cantidad</label>
+                <input  class="form-control" id="cantidad">
                 <input  class="form-control" id="cantidad">
             </div>
             <div class="col-md-2">
                 <label for="inputState" class="form-label">Categoria</label>
                 <select id="categoria" class="form-select">
                     <option selected>Choose...</option>
+                    <option value="Telas">Telas</option>
+                    <option value="Hilos">Hilos</option>
+                    <option value="Botones">Botones</option>
+                    <option value="Cierres">Cierres</option>
+                    <option value="Cauchos">Cauchos</option>
+                    <option value="lentejuelas">lentejuelas</option>
+                    <option value="Encajes">Encajes</option>
                     <option value="Telas">Telas</option>
                     <option value="Hilos">Hilos</option>
                     <option value="Botones">Botones</option>
@@ -67,6 +81,7 @@ registro.addEventListener('click', (event) => {
             </div>
             <div class="col-12">
                 <button type="button" id="guardarBtn-inv" class="btn btn-primary">Guardar</button>
+                <button type="button" id="guardarBtn-inv" class="btn btn-primary">Guardar</button>
             </div>
         </form>
     `;
@@ -77,6 +92,7 @@ registro.addEventListener('click', (event) => {
 
 
 document.addEventListener('click', (event) => {
+    if (event.target && event.target.id === 'guardarBtn-inv') {
     if (event.target && event.target.id === 'guardarBtn-inv') {
         let mp = {
             "id":"",
@@ -108,6 +124,7 @@ produccion.addEventListener('click', (event) => {
         <form class="row g-3">
             <div class="col-md-12">
             <label for="inputState" class="form-label">Producto</label>
+            <select id="producto" class="form-select">
             <select id="producto" class="form-select">
                 <option selected>Choose...</option>
                 <option value="Camisa manga Larga">Camisa manga Larga</option>
