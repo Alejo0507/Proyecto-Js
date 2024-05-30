@@ -76,10 +76,11 @@ export class calculadoraEficiencia extends LitElement {
                         </div>
 
                         <div class=productos-defectuosos">
-                        <label for="productosDefectuosos">Número de productos defectuosos</label>
-                        <input type="number" id="defectos" name="productosDefectuosos">
-                    </div>
+                            <label for="productosDefectuosos">Número de productos defectuosos</label>
+                            <input type="number" id="defectos" name="productosDefectuosos">
+                        </div>
 
+                        <input type="submit" id="enviar-form">
                     </form>
                 </p>
             </div>
