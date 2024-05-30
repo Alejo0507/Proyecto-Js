@@ -6,7 +6,7 @@ let stock={
 
 }
 let Producciones ={
-    
+
 }
 
 registro.addEventListener('click', (event) => {
@@ -34,23 +34,27 @@ registro.addEventListener('click', (event) => {
             </div>
             <div class="col-4">
                 <label for="inputAddress2" class="form-label">Unidad de Medida</label>
-                <input type="text" class="form-control" id="unidadMedida" placeholder="metros / centimetros">
+                <select class="form-select" id="unidadMedida">
+                <option selected>Choose...</option>
+                <option value="Metros">Metros</option>
+                <option value="Centimetros">Centimetros</option>
+                </select>
             </div>
             <div class="col-md-2">
                 <label for="inputCity" class="form-label">Cantidad</label>
-                <input type="number" class="form-control" id="cantidad">
+                <input  class="form-control" id="cantidad">
             </div>
             <div class="col-md-2">
                 <label for="inputState" class="form-label">Categoria</label>
                 <select id="categoria" class="form-select">
                     <option selected>Choose...</option>
-                    <option value="option1">Telas</option>
-                    <option value="option2">Hilos</option>
-                    <option value="option3">Botones</option>
-                    <option value="option3">Cierres</option>
-                    <option value="option3">Cauchos</option>
-                    <option value="option3">lentejuelas</option>
-                    <option value="option3">Encajes</option>
+                    <option value="Telas">Telas</option>
+                    <option value="Hilos">Hilos</option>
+                    <option value="Botones">Botones</option>
+                    <option value="Cierres">Cierres</option>
+                    <option value="Cauchos">Cauchos</option>
+                    <option value="lentejuelas">lentejuelas</option>
+                    <option value="Encajes">Encajes</option>
                 </select>
             </div>
             <div class="col-md-4">
@@ -58,7 +62,7 @@ registro.addEventListener('click', (event) => {
                 <input type="text" class="form-control" id="ubicacion">
             </div>
             <div class="col-12">
-                <button type="button" id="guardarBtn" class="btn btn-primary">Guardar</button>
+                <button type="button" id="guardarBtn-inv" class="btn btn-primary">Guardar</button>
             </div>
         </form>
     `;
@@ -68,7 +72,7 @@ registro.addEventListener('click', (event) => {
 
 
 document.addEventListener('click', (event) => {
-    if (event.target && event.target.id === 'guardarBtn') {
+    if (event.target && event.target.id === 'guardarBtn-inv') {
         let mp = {
             "id":"",
             "nombre":"",
@@ -99,7 +103,7 @@ produccion.addEventListener('click', (event) => {
         <form class="row g-3">
             <div class="col-md-12">
             <label for="inputState" class="form-label">Producto</label>
-            <select id="categoria" class="form-select">
+            <select id="producto" class="form-select">
                 <option selected>Choose...</option>
                 <option value="option1">Camisa manga Larga</option>
                 <option value="option2">Camisa manga Corta</option>
@@ -112,15 +116,36 @@ produccion.addEventListener('click', (event) => {
         </div>
             <div class="col-md-4">
                 <label for="inputEmail4" class="form-label">Cantidad de Productos</label>
-                <input type="number" class="form-control" id="costoUnidad">
+                <input type="number" class="form-control" id="cantidad">
             </div>
             
            
             <div class="col-12">
-                <button type="button" id="guardarBtn" class="btn btn-primary">Guardar</button>
+                <button type="button" id="guardarBtn-pro" class="btn btn-primary">Guardar</button>
             </div>
         </form>
     `;
 
     event.preventDefault();
+});
+document.addEventListener('click', (event) => {
+    if (event.target && event.target.id === 'guardarBtn-pro') {
+        let pro = {
+            
+            "producto":"",
+            "cantidad":"",
+            
+        }
+        const inputs = document.querySelectorAll('input, select');
+        inputs.forEach(input => {
+            pro[input.id] = input.value;
+        });
+        Producciones[Date.now()] = pro;
+
+        inputs.forEach(input => {
+            input.value = '';
+        });
+        console.log(Producciones)
+        event.preventDefault();
+    }
 });
