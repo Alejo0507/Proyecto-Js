@@ -88,7 +88,7 @@ export class calculadoraManoDeObra extends LitElement {
                             </div>
 
                             <div class="input-container">
-                                <label for="beneficios">Beneficios y prestaciones</label>
+                                <label for="beneficios">Beneficios y prestaciones por empleado</label>
                                 <input type="number" id="beneficios" name="beneficios">
                             </div>
 

@@ -4,4 +4,5 @@ import './src/components/materiaPForm'
 import './src/scripts/calculos/eficienciaOperativa'
 import './src/components/calculadoraEficiencia'
 import './src/components/manoDeObra'
+import './src/scripts/calculos/mano de obra/thisMain'
 
