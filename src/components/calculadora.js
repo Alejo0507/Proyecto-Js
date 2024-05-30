@@ -47,6 +47,17 @@ export class calculadoraEficiencia extends LitElement {
         text-decoration: none;
         cursor: pointer;
     }
+
+    #resultado-container {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        p {
+            font-size: 40px;
+        }
+    }
     `
 
     
@@ -58,30 +69,39 @@ export class calculadoraEficiencia extends LitElement {
             <div class="modal-content">
                 <span id="closeModalBtn" class="close">&times;</span>
                 <p>
-                    <h1>Calcular productividad</h1>
-                    <form id="calcProdForm">
-                        <div class="cantidad-productos-container">
-                            <label for="totalProductos">Cantidad total de productos terminados</label>
-                            <input type="number" id="total" name="totalProductos">
-                        </div>
+                    <h1>Calcular eficiencia operativa</h1>
+                    <div id="form-container">
+                        <form id="calcForm">
+                            <div class="cantidad-productos-container">
+                                <label for="totalProductos">Cantidad total de productos terminados</label>
+                                <input type="number" id="total" name="totalProductos">
+                            </div>
 
-                        <div class="horas-totales-container">
-                            <label for="horasTotProduct">Horas totales de producción</label>
-                            <input type="number" id="horas" name="horasTotProduct">
-                        </div>
+                            <div class="horas-totales-container">
+                                <label for="horasTotProduct">Horas totales de producción</label>
+                                <input type="number" id="horas" name="horasTotProduct">
+                            </div>
 
-                        <div class="costos-totales">
-                            <label for="costosOperativosTotales">Costos operativos totales</label>
-                            <input type="number" id="costos" name="costosOperativosTotales">
-                        </div>
+                            <div class="costos-totales">
+                                <label for="costosOperativosTotales">Costos operativos totales</label>
+                                <input type="number" id="costos" name="costosOperativosTotales">
+                            </div>
 
-                        <div class=productos-defectuosos">
-                            <label for="productosDefectuosos">Número de productos defectuosos</label>
-                            <input type="number" id="defectos" name="productosDefectuosos">
-                        </div>
+                            <div class=productos-defectuosos">
+                                <label for="productosDefectuosos">Número de productos defectuosos</label>
+                                <input type="number" id="defectos" name="productosDefectuosos">
+                            </div>
 
-                        <input type="submit" id="enviar-form">
-                    </form>
+                            <input type="submit" id="enviar-form">
+                        </form>
+                    </div>
+
+                    <div id="resultado-container">
+
+                        <h1>Su empresa tiene una eficiencia operativa de:</h1>
+                        <p><span id="resultado">0  </span> unidades/$</p>
+                        <button id="volverACalcular">Volver a calcular</button>
+                    </div>
                 </p>
             </div>
         </div>
