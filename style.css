@@ -25,150 +25,145 @@ body::before {
     to right,
     rgba(0, 0, 0, 0.8),  
     rgba(0, 0, 0, 0.8)  
-    );
-    pointer-events: none; 
-    z-index: 0;
-  }
-  #inicio{
-    color: #ae4bc7;
-    font-size: 1.5rem;
-    text-decoration: none;
-    position: absolute;
-    z-index: 2;
-    margin-right:80%;
-    margin-bottom: 730px;
-  }
-  #inicio:hover{
-    color: #8d1ea8;
-  }
-  .imagen-head{
-    height: 200px;
-  }
-  .iconos{
-    height: 8rem;
-  }
-  .title{
-    color: #ae4bc7;
-    
-    margin-bottom:730px;
-    position: absolute;
-    z-index: 1;
-  }
-  #contenedor-texto{
-    text-align: center;
-    margin-top: 20px;
-    z-index: 1;
-    color: #ffffff;
-  }
-  #contenedor-imagenes{
-    z-index: 1;
-    justify-content: space-around;
-    width: 100vw;
-    display: flex;
-  }
-  .imagenes-principal{
-    border-radius: 10px;
-    z-index: 1;
-  }
-  #botones{
-    border: none;
-    color: #ffffff;
-    background-color: #8d1ea8;
-  }
-  header{
-    z-index: 0;
-    margin-top: 0;
-    margin-bottom: 800px;
-    position: absolute;
-    height: 250px;
-    width: 100vw;
-  }
-  #contenedor-principal{
-    width: 95vw;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .menu-opciones{
-    z-index: 1;
-    margin-bottom: 50px;
-    border-radius: 10px;
-    margin-top: 20px;
-    height: 100px;
-    background-color: #ae4bc7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width:80vw;
-  }
-  #tarjeta{
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 18rem;
-    transition: 0.5s ease;
-    
-  }
-  #tarjeta:hover{
-    transform: scale(1.1);
-    
-  }
-  #cards{
-    width: 80vw;
-    gap: 10px;
-    justify-content: space-evenly;
-    display: flex;
-    
-  }
-  #inf{
-    color: #ffffff;
-  }
-  #cal{
-    color: #ffffff;
-  }
-  #reg{
-    color: #ffffff;
-  }
-  #reg:hover{
-    color: #ae4bc7;
-  }
-  #inf:hover{
-    color: #ae4bc7;
-  }
-  #cal:hover{
-    color: #ae4bc7;
-  }
-  #opcion{
-    background-color: #ae4bc7;
-    margin: 2%;
-    transition:all 0.5s ease;
-  }
-  #opcion:hover{
-    color: rgba(19, 19, 19,);
-    background-color: #efb7fd;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    cursor: pointer;
-  }
-  .estilo{
-    border-radius: 10px;
-    padding: 20px;
-    color: #ffffff;
-    width: 98vw;
-    background-color:rgba(19, 19, 19,0.7);
-  }
-  #cards{
-    color: #ffffff;
-    z-index: 1;
-  }
+  );
+  pointer-events: none; 
+  z-index: 0;
+}
+#inicio{
+  color: #ae4bc7;
+  font-size: 1.5rem;
+  text-decoration: none;
+  position: absolute;
+  z-index: 2;
+  margin-right:80%;
+  margin-bottom: 730px;
+}
+#inicio:hover{
+  color: #8d1ea8;
+}
+.imagen-head{
+  height: 200px;
+}
+.iconos{
+  height: 8rem;
+}
+.title{
+  color: #ae4bc7;
   
-  .calcular-boton {
-    background-color: red;
-  }
+  margin-bottom:730px;
+  position: absolute;
+  z-index: 1;
+}
+#contenedor-texto{
+  text-align: center;
+  margin-top: 20px;
+  z-index: 1;
+  color: #ffffff;
+}
+#contenedor-imagenes{
+  z-index: 1;
+  justify-content: space-around;
+  width: 100vw;
+  display: flex;
+}
+.imagenes-principal{
+  border-radius: 10px;
+  z-index: 1;
+}
+#botones{
+  border: none;
+  color: #ffffff;
+  background-color: #8d1ea8;
+}
+header{
+  z-index: 0;
+  margin-top: 0;
+  margin-bottom: 800px;
+  position: absolute;
+  height: 250px;
+  width: 100vw;
+}
+#contenedor-principal{
+  width: 95vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.menu-opciones{
+  z-index: 1;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  margin-top: 20px;
+  height: 100px;
+  background-color: #ae4bc7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:80vw;
+}
+#tarjeta{
   
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 18rem;
+  transition: 0.5s ease;
   
+}
+#tarjeta:hover{
+  transform: scale(1.1);
+  
+}
+#cards{
+  width: 80vw;
+  gap: 10px;
+ justify-content: space-evenly;
+ display: flex;
+
+}
+#inf{
+  color: #ffffff;
+}
+#cal{
+  color: #ffffff;
+}
+#reg{
+  color: #ffffff;
+}
+#reg:hover{
+  color: #ae4bc7;
+}
+#inf:hover{
+  color: #ae4bc7;
+}
+#cal:hover{
+  color: #ae4bc7;
+}
+#opcion{
+  background-color: #ae4bc7;
+  margin: 2%;
+  transition:all 0.5s ease;
+}
+#opcion:hover{
+  color: rgba(19, 19, 19,);
+  background-color: #efb7fd;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+.estilo{
+  border-radius: 10px;
+  padding: 20px;
+  color: #ffffff;
+  width: 98vw;
+  background-color:rgba(19, 19, 19,0.7);
+}
+#cards{
+  color: #ffffff;
+  z-index: 1;
+}
+
