@@ -35,7 +35,7 @@ registro.addEventListener('click', (event) => {
             <div class="col-md-2">
                 <label for="inputState" class="form-label">Categoria</label>
                 <select id="categoria" class="form-select">
-                    <option selected>Choose...</option>
+                    <option selected>Choose</option>
                     <option value="Telas">Telas</option>
                     <option value="Hilos">Hilos</option>
                     <option value="Botones">Botones</option>
@@ -87,7 +87,18 @@ document.addEventListener('click', (event) => {
         .catch((error) => {
             console.error('Error al enviar los datos:', error);
         });
-
+        limpiarFormulario();
         event.preventDefault();
     }
 });
+function limpiarFormulario() {
+    // Establecer el valor de cada campo del formulario a una cadena vacía
+    document.querySelector('#nombre').value = '';
+    document.querySelector('#fecha').value = '';
+    document.querySelector('#costoUnidad').value = '';
+    document.querySelector('#proveedor').value = '';
+    document.querySelector('#descripcion').value = '';
+    document.querySelector('#unidadMedida').value = '';
+    document.querySelector('#cantidad').value = '';
+    document.querySelector('#ubicacion').value = '';
+    document.querySelector('#categoria').value = ''; }
