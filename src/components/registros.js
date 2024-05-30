@@ -15,11 +15,11 @@ registro.addEventListener('click', (event) => {
             </div>
             <div class="col-md-4">
                 <label for="inputPassword4" class="form-label">Fecha</label>
-                <input type="text" class="form-control" id="fecha" placeholder="DD/MM/AAAA">
+                <input type="date" class="form-control" id="fecha" placeholder="DD/MM/AAAA">
             </div>
             <div class="col-md-2">
                 <label for="inputEmail4" class="form-label">Costo por unidad</label>
-                <input type="text" class="form-control" id="costoUnidad">
+                <input type="number" class="form-control" id="costoUnidad">
             </div>
             <div class="col-md-6">
                 <label for="inputPassword4" class="form-label">Proveedor</label>
@@ -35,7 +35,7 @@ registro.addEventListener('click', (event) => {
             </div>
             <div class="col-md-2">
                 <label for="inputCity" class="form-label">Cantidad</label>
-                <input type="text" class="form-control" id="cantidad">
+                <input type="number" class="form-control" id="cantidad">
             </div>
             <div class="col-md-2">
                 <label for="inputState" class="form-label">Categoria</label>
