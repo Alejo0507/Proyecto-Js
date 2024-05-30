@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const formContainer = cRoot.getElementById('form-container');
     const resultContainer = cRoot.getElementById('resultado-container');
     const resultado = cRoot.getElementById('resultado');
+    const SUBMIT = cRoot.getElementById('enviar-form');
 
     
     // Función para aparecer modal al dar click
@@ -40,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formContainer.style.display = "none";
         resultContainer.style.display = "flex";
         
-        resultado.textContent = eficienciaOp;
+        resultado.textContent = eficienciaOp.toFixed(2);
         
 
 
