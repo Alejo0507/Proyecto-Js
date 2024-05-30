@@ -15,6 +15,7 @@ let Producciones ={
 
 registro.addEventListener('click', (event) => {
     document.querySelector('#cards').innerHTML = `
+        <h3></h3>
         <form class="row g-3">
             <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Nombre</label>
