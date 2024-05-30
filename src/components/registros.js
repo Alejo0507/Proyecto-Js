@@ -1,11 +1,7 @@
 
 
 const registro = document.querySelector('button')
-
-let stock={
-
-}
-
+let stock {};
 registro.addEventListener('click', (event) => {
     document.querySelector('#cards').innerHTML = `
         <form class="row g-3">
@@ -65,28 +61,48 @@ registro.addEventListener('click', (event) => {
 
 document.addEventListener('click', (event) => {
     if (event.target && event.target.id === 'guardarBtn') {
-        let mp = {
-            "id":"",
-            "nombre":"",
-            "categoria":"",
-            "fecha":"",
-            "costoUnidad":"",
-            "proveedor":"",
-            "descripcion":"",
-            "unidadMedida":"",
-            "cantidad":"",
-            "ubicacion":"",
-        }
-        const inputs = document.querySelectorAll('input, select');
-        inputs.forEach(input => {
-            mp[input.id] = input.value;
-        });
-        stock[Date.now()] = mp;
+        let stock = {
+            id: "",
+            nombre: document.querySelector('#nombre').value,
+            fecha: document.querySelector('#fecha').value,
+            costoUnidad: document.querySelector('#costoUnidad').value,
+            proveedor: document.querySelector('#proveedor').value,
+            descripcion: document.querySelector('#descripcion').value,
+            unidadMedida: document.querySelector('#unidadMedida').value,
+            cantidad: document.querySelector('#cantidad').value,
+            ubicacion: document.querySelector('#ubicacion').value,
+            categoria: {
+                "Telas": "",
+                "Hilos": "",
+                "Botones": "",
+                "Cierres": "",
+                "Cauchos": "",
+                "Lentejuelas": "",
+                "Encajes": ""
+            }
+        };
 
-        inputs.forEach(input => {
-            input.value = '';
+        // Set the selected category to "1" in the stock object
+        let selectedCategory = document.querySelector('#categoria').value;
+        if (selectedCategory && selectedCategory !== 'Choose...') {
+            stock.categoria[selectedCategory] = "1";
+        }
+
+        fetch('https://664a68e3a300e8795d41e736.mockapi.io/api/v1/stock', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(stock)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Datos enviados exitosamente:', data);
+        })
+        .catch((error) => {
+            console.error('Error al enviar los datos:', error);
         });
-        console.log(stock)
+
         event.preventDefault();
     }
 });
