@@ -1,10 +1,11 @@
 import './formulas'
+import { calcularEficienciaOperativa, calcularProduccionEfectiva } from './formulas';
 
 document.addEventListener('DOMContentLoaded', () => {
 
     // DECLARACIÓN DE CONSTANTES
     const calcularButton = document.getElementById('calcular-productividad');
-    const cRoot = document.querySelector('calc-productividad').shadowRoot; // ShadowRoot del elemento calculadora
+    const cRoot = document.querySelector('calc-eficiencia').shadowRoot; // ShadowRoot del elemento calculadora
     const modal = cRoot.getElementById('myModal');
     const closeModalButton = cRoot.getElementById('closeModalBtn');
     const calcForm = cRoot.getElementById('calcForm');
@@ -31,13 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const productosTotales = cRoot.getElementById('total').value;
         const horasTotales = cRoot.getElementById('horas').value;
         const costosTotales = cRoot.getElementById('costos').value;
-        const prodDefectuosos = cRoot.getElementById('defectuosos').value;
+        const prodDefectuosos = cRoot.getElementById('defectos').value;
         
+        const prodEfectiva = calcularProduccionEfectiva(productosTotales,prodDefectuosos);
+        const eficienciaOp = calcularEficienciaOperativa(prodEfectiva, costosTotales);
 
         formContainer.style.display = "none";
         resultContainer.style.display = "flex";
-    
-        resultado.textContent = resultadoCalc
+        
+        resultado.textContent = eficienciaOp;
+        
 
 
     })
