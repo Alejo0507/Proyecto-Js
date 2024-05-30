@@ -167,12 +167,11 @@ costos.addEventListener('click', (event) => {
                 <label for="inputEmail4" class="form-label">Valor de Costo Indirecto</label>
                 <input type="number" class="form-control" id="valor-costo">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <label for="inputEmail4" class="form-label">Descripcion</label>
-                <br>
-                <textarea id="descripcion-costo" name="comentarios" style="height:7rem; width:30rem;" >
-                 </textarea>
+                <input type="text" class="form-control" id="descripcion-costo">
             </div>
+           
             
            
             <div class="col-12">
