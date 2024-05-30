@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // DECLARACIÓN DE CONSTANTES
     const calcularButton = document.getElementById('calcular-productividad');
-    const cRoot = document.querySelector('calculadora-elemento').shadowRoot; // ShadowRoot del elemento calculadora
+    const cRoot = document.querySelector('calc-productividad').shadowRoot; // ShadowRoot del elemento calculadora
     const modal = cRoot.getElementById('myModal');
     const closeModalButton = cRoot.getElementById('closeModalBtn');
     const calcForm = cRoot.getElementById('calcForm');

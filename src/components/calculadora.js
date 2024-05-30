@@ -1,6 +1,6 @@
 import { LitElement, html, css } from "lit";
 
-export class calculadoraProductividad extends LitElement {
+export class calculadoraEficiencia extends LitElement {
     constructor() {
         super();
     }
@@ -77,4 +77,4 @@ export class calculadoraProductividad extends LitElement {
     }
 }
 
-customElements.define('calc-productividad', calculadoraProductividad)
+customElements.define('calc-eficiencia', calculadoraEficiencia)
