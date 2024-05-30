@@ -34,7 +34,7 @@ export class MateriaPrimaFormulario extends LitElement {
         font-size: 20px;
     }
     .modal {
-        display: none; /* Ocultar modal por defecto */
+        display: none; 
         position: fixed;
         z-index: 1;
         left: 0;
@@ -42,7 +42,7 @@ export class MateriaPrimaFormulario extends LitElement {
         width: 100%;
         height: 100%;
         overflow: auto;
-        background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+        background-color: rgba(0, 0, 0, 0.5); 
         align-items: center;
         justify-content: center;
         flex-direction: column;

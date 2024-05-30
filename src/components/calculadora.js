@@ -46,9 +46,26 @@ export class calculadoraProductividad extends LitElement {
         text-decoration: none;
         cursor: pointer;
     }
+
+    #resultado-container {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+            font-size: 10rem;
+            margin: 0;
+            padding: 0;
+        }
+    }
     `
 
-    
+    mostrarResultado() {
+        const resultContainer = this.shadowRoot.getElementById('resultado-container');
+        resultContainer.style.display = "flex";
+        this.shadowRoot.getElementById('form-container').style.display = "none"
+    }
 
 
     render() {
@@ -57,19 +74,29 @@ export class calculadoraProductividad extends LitElement {
             <div class="modal-content">
                 <span id="closeModalBtn" class="close">&times;</span>
                 <p>
-                    <h1>Calcular productividad</h1>
-                    <form id="calcProdForm">
-                        <div class="cantidad-productos-container">
-                            <label for="totalProductos">Cantidad total de productos terminados</label>
-                            <input type="number" name="totalProductos">
-                        </div>
+                    <div id="form-container">
+                        <h1>Calcular productividad</h1>
+                        <form id="calcForm">
+                            <div class="cantidad-productos-container">
+                                <label for="totalProductos">Cantidad total de productos terminados</label>
+                                <input type="number" id="total" name="totalProductos" required>
+                            </div>
 
-                        <div class="horas-totales-container">
-                            <label for="horasTotProduct">Horas totales de producción</label>
-                            <input type="number" name="horasTotProduct">
-                        </div>
+                            <div class="horas-totales-container">
+                                <label for="horasTotProduct">Horas totales de producción</label>
+                                <input type="number" id="horas" name="horasTotProduct" required>
+                            </div>
 
-                    </form>
+                            <input id="submit-calc" type="submit" value="Enviar">
+
+                        </form>
+                    </div>
+                    <div id="resultado-container">
+                        <h1>Productividad</h1>
+                        <p id="resultado">0</p>
+                        <button id="deNuevo">Volver a calcular</button>
+                        <button id="salir">Salir</button>
+                    </div>
                 </p>
             </div>
         </div>
@@ -77,4 +104,4 @@ export class calculadoraProductividad extends LitElement {
     }
 }
 
-customElements.define('calc-productividad', calculadoraProductividad)
+customElements.define('calculadora-elemento', calculadoraProductividad)
