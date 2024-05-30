@@ -1,9 +1,12 @@
 
 
-const registro = document.querySelector('button')
-
+const registro = document.getElementById('inventario')
+const produccion=document.getElementById('produccion')
 let stock={
 
+}
+let Producciones ={
+    
 }
 
 registro.addEventListener('click', (event) => {
@@ -63,6 +66,7 @@ registro.addEventListener('click', (event) => {
     event.preventDefault();
 });
 
+
 document.addEventListener('click', (event) => {
     if (event.target && event.target.id === 'guardarBtn') {
         let mp = {
@@ -90,4 +94,33 @@ document.addEventListener('click', (event) => {
         event.preventDefault();
     }
 });
+produccion.addEventListener('click', (event) => {
+    document.querySelector('#cards').innerHTML = `
+        <form class="row g-3">
+            <div class="col-md-12">
+            <label for="inputState" class="form-label">Producto</label>
+            <select id="categoria" class="form-select">
+                <option selected>Choose...</option>
+                <option value="option1">Camisa manga Larga</option>
+                <option value="option2">Camisa manga Corta</option>
+                <option value="option3">Vestido Largo</option>
+                <option value="option3">Vestido Corto</option>
+                <option value="option3">Pantalon de Jean</option>
+                <option value="option3">Pantalon de Vestir</option>
+                <option value="option3">Short</option>
+            </select>
+        </div>
+            <div class="col-md-4">
+                <label for="inputEmail4" class="form-label">Cantidad de Productos</label>
+                <input type="number" class="form-control" id="costoUnidad">
+            </div>
+            
+           
+            <div class="col-12">
+                <button type="button" id="guardarBtn" class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
+    `;
 
+    event.preventDefault();
+});
