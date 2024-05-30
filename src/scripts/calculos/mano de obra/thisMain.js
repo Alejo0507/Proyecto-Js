@@ -1,5 +1,7 @@
 import './formulas'
+import '../../formatearMoneda'
 import { calcularBeneficiosTotales, calcularCostosTotales, calcularSalarioPorHora, calcularSalarioTotal } from './formulas';
+import { pasarAMoneda } from '../../formatearMoneda';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -44,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formContainer.style.display = "none";
         resultContainer.style.display = "flex";
         
-        resultado.textContent = costoManoDeObraTotal.toFixed(2);
+        resultado.textContent = pasarAMoneda(costoManoDeObraTotal);
     })
     
     
