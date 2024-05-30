@@ -22,8 +22,8 @@ body::before {
   height: 100%;
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.8),  
-    rgba(0, 0, 0, 0.8)  
+    rgba(0, 0, 0, 0.7),  
+    rgba(0, 0, 0, 0.7)  
   );
   pointer-events: none; 
   z-index: 0;
@@ -69,7 +69,12 @@ body::before {
   border-radius: 10px;
   z-index: 1;
 }
-#botones{
+#inventario{
+  border: none;
+  color: #ffffff;
+  background-color: #8d1ea8;
+}
+#produccion{
   border: none;
   color: #ffffff;
   background-color: #8d1ea8;
