@@ -1,7 +1,6 @@
 
 
 const registro = document.querySelector('button')
-let stock {};
 registro.addEventListener('click', (event) => {
     document.querySelector('#cards').innerHTML = `
         <form class="row g-3">
@@ -72,20 +71,20 @@ document.addEventListener('click', (event) => {
             cantidad: document.querySelector('#cantidad').value,
             ubicacion: document.querySelector('#ubicacion').value,
             categoria: {
-                "Telas": "",
-                "Hilos": "",
-                "Botones": "",
-                "Cierres": "",
-                "Cauchos": "",
-                "Lentejuelas": "",
-                "Encajes": ""
+                Telas,
+                Hilos,
+                Botones,
+                Cierres,
+                Cauchos,
+                Lentejuelas,
+                Encajes,
             }
         };
 
         // Set the selected category to "1" in the stock object
         let selectedCategory = document.querySelector('#categoria').value;
         if (selectedCategory && selectedCategory !== 'Choose...') {
-            stock.categoria[selectedCategory] = "1";
+            stock.categoria[selectedCategory] = "";
         }
 
         fetch('https://664a68e3a300e8795d41e736.mockapi.io/api/v1/stock', {
