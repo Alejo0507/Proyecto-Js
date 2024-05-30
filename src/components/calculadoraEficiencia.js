@@ -6,10 +6,25 @@ export class calculadoraEficiencia extends LitElement {
     }
 
     static styles = css`
-    #horas,#costos,#total,#defectos{
+    .input-container{
         border-radius:5px;
         height:25px;
         margin:10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+
+        label {
+            align-self: left;
+            text: left;
+            justify-self: start;
+            width: 370px;
+        }
+
+        input {
+            width: 230px;
+            border-radius: 6px;
+        }
         
     }
    
@@ -81,6 +96,10 @@ export class calculadoraEficiencia extends LitElement {
         text: center;
         justify-content: center;
     }
+
+    #enviar-form {
+        margin-top: 4rem;
+    }
     `
 
     
@@ -95,22 +114,22 @@ export class calculadoraEficiencia extends LitElement {
                     <h1>Calcular eficiencia operativa</h1>
                     <div id="form-container">
                         <form id="calcForm">
-                            <div class="cantidad-productos-container">
+                            <div class="input-container">
                                 <label for="totalProductos">Cantidad total de productos terminados</label>
                                 <input type="number" id="total" name="totalProductos">
                             </div>
 
-                            <div class="horas-totales-container">
+                            <div class="input-container">
                                 <label for="horasTotProduct">Horas totales de producción</label>
                                 <input type="number" id="horas" name="horasTotProduct">
                             </div>
 
-                            <div class="costos-totales">
+                            <div class="input-container">
                                 <label for="costosOperativosTotales">Costos operativos totales</label>
                                 <input type="number" id="costos" name="costosOperativosTotales">
                             </div>
 
-                            <div class="productos-defectuosos">
+                            <div class="input-container">
                                 <label for="productosDefectuosos">Número de productos defectuosos</label>
                                 <input type="number" id="defectos" name="productosDefectuosos">
                             </div>
