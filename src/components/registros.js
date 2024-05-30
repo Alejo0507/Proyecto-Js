@@ -2,7 +2,10 @@
 
 const registro = document.getElementById('inventario')
 const produccion=document.getElementById('produccion')
+const costos=document.getElementById('Costos-indirectos')
+let costo={
 
+}
 let stock={
 
 }
@@ -107,13 +110,13 @@ produccion.addEventListener('click', (event) => {
             <label for="inputState" class="form-label">Producto</label>
             <select id="producto" class="form-select">
                 <option selected>Choose...</option>
-                <option value="option1">Camisa manga Larga</option>
-                <option value="option2">Camisa manga Corta</option>
-                <option value="option3">Vestido Largo</option>
-                <option value="option3">Vestido Corto</option>
-                <option value="option3">Pantalon de Jean</option>
-                <option value="option3">Pantalon de Vestir</option>
-                <option value="option3">Short</option>
+                <option value="Camisa manga Larga">Camisa manga Larga</option>
+                <option value="Camisa manga Corta">Camisa manga Corta</option>
+                <option value="Vestido Largo">Vestido Largo</option>
+                <option value="Vestido Corto">Vestido Corto</option>
+                <option value="Pantalon de Jean">Pantalon de Jean</option>
+                <option value="Pantalon de Vestir">Pantalon de Vestir</option>
+                <option value="Short">Short</option>
             </select>
         </div>
             <div class="col-md-4">
@@ -151,3 +154,66 @@ document.addEventListener('click', (event) => {
         event.preventDefault();
     }
 });
+
+costos.addEventListener('click', (event) => {
+    document.querySelector('#cards').innerHTML = `
+        <form class="row g-3">
+        <div class="col-md-6">
+            <label for="inputState" class="form-label">Costo Indirecto</label>
+            <select id="nombre-costo" class="form-select">
+                <option selected>Choose...</option>
+                <option value="Luz/Electricidad">Luz/Electricidad</option>
+                <option value="Agua/Alcantarillado">Agua/Alcantarillado</option>
+                <option value="Mantenimiento de Maquinas">Mantenimiento de Maquinas</option>
+                <option value="Costos de Arriendo">Costos de Arriendo</option>
+                <option value="Costos de administración">Costos de administración</option>
+                <option value="Costos de ventas y marketing">Costos de ventas y marketing</option>
+                <option value="Costos de seguros">Costos de seguros</option>
+                <option value="Costos de tecnología de la información">Costos de tecnología de la información</option>
+                <option value="Costos financieros">Costos financieros</option>
+            </select>
+        </div>
+        
+            <div class="col-md-3">
+                <label for="inputEmail4" class="form-label">Valor de Costo Indirecto</label>
+                <input type="number" class="form-control" id="valor-costo">
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Descripcion</label>
+                <br>
+                <textarea id="descripcion-costo" name="comentarios" style="height:7rem; width:30rem;" >
+                 </textarea>
+            </div>
+            
+           
+            <div class="col-12">
+                <button type="button" id="guardarBtn-cos" class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
+    `;
+
+    event.preventDefault();
+});
+document.addEventListener('click', (event) => {
+    if (event.target && event.target.id === 'guardarBtn-cos') {
+        let cos = {
+            
+            "nombre-costo":"",
+            "valor-costo":"",
+            "descripcion-costo":"",
+            
+        }
+        const inputs = document.querySelectorAll('input, select ,textarea');
+        inputs.forEach(input => {
+            cos[input.id] = input.value;
+        });
+        costo[Date.now()] = cos;
+
+        inputs.forEach(input => {
+            input.value = '';
+        });
+        console.log(costo)
+        event.preventDefault();
+    }
+});
+

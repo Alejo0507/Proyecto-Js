@@ -36,7 +36,7 @@ body::before {
   position: absolute;
   z-index: 2;
   margin-right:80%;
-  margin-bottom: 730px;
+  margin-bottom: 810px;
 }
 #inicio:hover{
   color: #8d1ea8;
@@ -49,8 +49,7 @@ body::before {
 }
 .title{
   color: #ae4bc7;
-  
-  margin-bottom:730px;
+  margin-bottom:810px;
   position: absolute;
   z-index: 1;
 }
@@ -70,20 +69,16 @@ body::before {
   border-radius: 10px;
   z-index: 1;
 }
-#inventario{
+#inventario,#produccion,#Costos-indirectos{
   border: none;
   color: #ffffff;
   background-color: #8d1ea8;
 }
-#produccion{
-  border: none;
-  color: #ffffff;
-  background-color: #8d1ea8;
-}
+
 header{
   z-index: 0;
   margin-top: 0;
-  margin-bottom: 800px;
+  margin-bottom: 900px;
   position: absolute;
   height: 250px;
   width: 100vw;

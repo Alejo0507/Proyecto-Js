@@ -6,7 +6,15 @@ export class calculadoraEficiencia extends LitElement {
     }
 
     static styles = css`
+    #horas,#costos,#total,#defectos{
+        border-radius:5px;
+        height:25px;
+        margin:10px;
+        
+    }
+   
     .modal {
+        
         display: none; /* Ocultar modal por defecto */
         position: fixed;
         z-index: 1;
@@ -21,11 +29,18 @@ export class calculadoraEficiencia extends LitElement {
         flex-direction: column;
     }
     .modal-content {
-        background-color: #fefefe;
+        color:white;
+        border-radius:20px;
+    
+        background: linear-gradient(
+            to bottom right,
+            rgb(141, 30, 168),
+            rgba(120, 50, 100)  
+          );
         margin: 15% auto;
         padding: 20px;
         border: 1px solid #888;
-        width: 80%;
+        width: 60%;
         height: 60%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         animation-name: modalopen;
@@ -58,6 +73,14 @@ export class calculadoraEficiencia extends LitElement {
             font-size: 40px;
         }
     }
+
+    #calcForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text: center;
+        justify-content: center;
+    }
     `
 
     
@@ -69,14 +92,6 @@ export class calculadoraEficiencia extends LitElement {
             <div class="modal-content">
                 <span id="closeModalBtn" class="close">&times;</span>
                 <p>
-<<<<<<< HEAD
-                    <h1>Calcular productividad</h1>
-                    <form id="calcForm">
-                        <div class="cantidad-productos-container">
-                            <label for="totalProductos">Cantidad total de productos terminados</label>
-                            <input type="number" id="total" name="totalProductos">
-                        </div>
-=======
                     <h1>Calcular eficiencia operativa</h1>
                     <div id="form-container">
                         <form id="calcForm">
@@ -84,7 +99,6 @@ export class calculadoraEficiencia extends LitElement {
                                 <label for="totalProductos">Cantidad total de productos terminados</label>
                                 <input type="number" id="total" name="totalProductos">
                             </div>
->>>>>>> e29ee8281233c69e9110fde83c09d6ae48c7912f
 
                             <div class="horas-totales-container">
                                 <label for="horasTotProduct">Horas totales de producción</label>
@@ -96,17 +110,10 @@ export class calculadoraEficiencia extends LitElement {
                                 <input type="number" id="costos" name="costosOperativosTotales">
                             </div>
 
-<<<<<<< HEAD
-                        <div class="productos-defectuosos">
-                            <label for="productosDefectuosos">Número de productos defectuosos</label>
-                            <input type="number" id="defectos" name="productosDefectuosos">
-                        </div>
-=======
-                            <div class=productos-defectuosos">
+                            <div class="productos-defectuosos">
                                 <label for="productosDefectuosos">Número de productos defectuosos</label>
                                 <input type="number" id="defectos" name="productosDefectuosos">
                             </div>
->>>>>>> e29ee8281233c69e9110fde83c09d6ae48c7912f
 
                             <input type="submit" id="enviar-form">
                         </form>
