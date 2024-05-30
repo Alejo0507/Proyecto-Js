@@ -2,6 +2,9 @@
 
 const registro = document.getElementById('inventario')
 const produccion=document.getElementById('produccion')
+const registro = document.getElementById('inventario')
+const produccion=document.getElementById('produccion')
+
 let stock={
 
 }
