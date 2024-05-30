@@ -70,7 +70,7 @@ body::before {
   border-radius: 10px;
   z-index: 1;
 }
-#inventario,#produccion,#Costos-indirectos{
+#inventario,#produccion,#Costos-indirectos,#calcular-productividad,#calcularManoDeObra,#informeuno,#informedos,#informetres{
   border: none;
   color: #ffffff;
   background-color: #8d1ea8;

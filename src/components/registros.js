@@ -115,7 +115,7 @@ document.addEventListener('click', (event) => {
 produccion.addEventListener('click', (event) => {
     document.querySelector('#cards').innerHTML = `
         <form class="row g-3">
-            <div class="col-md-12">
+            <div class="col-md-6">
             <label for="inputState" class="form-label">Producto</label>
             <select id="producto" class="form-select">
                 <option selected>Choose...</option>
@@ -128,7 +128,7 @@ produccion.addEventListener('click', (event) => {
                 <option value="Short">Short</option>
             </select>
         </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Cantidad de Productos</label>
                 <input type="number" class="form-control" id="costoUnidad">
             </div>
@@ -167,7 +167,7 @@ costos.addEventListener('click', (event) => {
                 <label for="inputEmail4" class="form-label">Valor de Costo Indirecto</label>
                 <input type="number" class="form-control" id="valor-costo">
             </div>
-            <div class="col-md-12">
+            <div class="col-md-7">
                 <label for="inputEmail4" class="form-label">Descripcion</label>
                 <input type="text" class="form-control" id="descripcion-costo">
             </div>
