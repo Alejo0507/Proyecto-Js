@@ -1,6 +1,6 @@
 
+const registro = document.querySelector('button');
 
-const registro = document.querySelector('button')
 registro.addEventListener('click', (event) => {
     document.querySelector('#cards').innerHTML = `
         <form class="row g-3">
@@ -36,13 +36,13 @@ registro.addEventListener('click', (event) => {
                 <label for="inputState" class="form-label">Categoria</label>
                 <select id="categoria" class="form-select">
                     <option selected>Choose...</option>
-                    <option value="option1">Telas</option>
-                    <option value="option2">Hilos</option>
-                    <option value="option3">Botones</option>
-                    <option value="option3">Cierres</option>
-                    <option value="option3">Cauchos</option>
-                    <option value="option3">lentejuelas</option>
-                    <option value="option3">Encajes</option>
+                    <option value="Telas">Telas</option>
+                    <option value="Hilos">Hilos</option>
+                    <option value="Botones">Botones</option>
+                    <option value="Cierres">Cierres</option>
+                    <option value="Cauchos">Cauchos</option>
+                    <option value="Lentejuelas">Lentejuelas</option>
+                    <option value="Encajes">Encajes</option>
                 </select>
             </div>
             <div class="col-md-4">
@@ -70,22 +70,8 @@ document.addEventListener('click', (event) => {
             unidadMedida: document.querySelector('#unidadMedida').value,
             cantidad: document.querySelector('#cantidad').value,
             ubicacion: document.querySelector('#ubicacion').value,
-            categoria: {
-                Telas,
-                Hilos,
-                Botones,
-                Cierres,
-                Cauchos,
-                Lentejuelas,
-                Encajes
-            }
+            categoria: document.querySelector('#categoria').value
         };
-
-        // Set the selected category to "1" in the stock object
-        let selectedCategory = document.querySelector('#categoria').value;
-        if (selectedCategory && selectedCategory !== 'Choose...') {
-            stock.categoria[selectedCategory] = "";
-        }
 
         fetch('https://664a68e3a300e8795d41e736.mockapi.io/api/v1/stock', {
             method: 'POST',
