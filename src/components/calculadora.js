@@ -59,7 +59,7 @@ export class calculadoraEficiencia extends LitElement {
                 <span id="closeModalBtn" class="close">&times;</span>
                 <p>
                     <h1>Calcular productividad</h1>
-                    <form id="calcProdForm">
+                    <form id="calcForm">
                         <div class="cantidad-productos-container">
                             <label for="totalProductos">Cantidad total de productos terminados</label>
                             <input type="number" id="total" name="totalProductos">
@@ -75,7 +75,7 @@ export class calculadoraEficiencia extends LitElement {
                             <input type="number" id="costos" name="costosOperativosTotales">
                         </div>
 
-                        <div class=productos-defectuosos">
+                        <div class="productos-defectuosos">
                             <label for="productosDefectuosos">Número de productos defectuosos</label>
                             <input type="number" id="defectos" name="productosDefectuosos">
                         </div>
