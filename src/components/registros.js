@@ -1,5 +1,4 @@
 
-
 const registro = document.getElementById('inventario')
 const produccion=document.getElementById('produccion')
 const costos=document.getElementById('Costos-indirectos')
@@ -44,16 +43,12 @@ registro.addEventListener('click', (event) => {
                 <option value="Metros">Metros</option>
                 <option value="Centimetros">Centimetros</option>
                 </select>
-                <select class="form-select" id="unidadMedida">
-                <option selected>Choose...</option>
-                <option value="Metros">Metros</option>
-                <option value="Centimetros">Centimetros</option>
-                </select>
+            
             </div>
             <div class="col-md-2">
                 <label for="inputCity" class="form-label">Cantidad</label>
                 <input  class="form-control" id="cantidad">
-                <input  class="form-control" id="cantidad">
+                
             </div>
             <div class="col-md-2">
                 <label for="inputState" class="form-label">Categoria</label>
@@ -81,7 +76,6 @@ registro.addEventListener('click', (event) => {
             </div>
             <div class="col-12">
                 <button type="button" id="guardarBtn-inv" class="btn btn-primary">Guardar</button>
-                <button type="button" id="guardarBtn-inv" class="btn btn-primary">Guardar</button>
             </div>
         </form>
     `;
@@ -92,7 +86,6 @@ registro.addEventListener('click', (event) => {
 
 
 document.addEventListener('click', (event) => {
-    if (event.target && event.target.id === 'guardarBtn-inv') {
     if (event.target && event.target.id === 'guardarBtn-inv') {
         let mp = {
             "id":"",
@@ -125,7 +118,6 @@ produccion.addEventListener('click', (event) => {
             <div class="col-md-12">
             <label for="inputState" class="form-label">Producto</label>
             <select id="producto" class="form-select">
-            <select id="producto" class="form-select">
                 <option selected>Choose...</option>
                 <option value="Camisa manga Larga">Camisa manga Larga</option>
                 <option value="Camisa manga Corta">Camisa manga Corta</option>
@@ -138,44 +130,24 @@ produccion.addEventListener('click', (event) => {
         </div>
             <div class="col-md-4">
                 <label for="inputEmail4" class="form-label">Cantidad de Productos</label>
-                <input type="number" class="form-control" id="cantidad">
+                <input type="number" class="form-control" id="costoUnidad">
             </div>
             
            
             <div class="col-12">
-                <button type="button" id="guardarBtn-pro" class="btn btn-primary">Guardar</button>
+                <button type="button" id="guardarBtn" class="btn btn-primary">Guardar</button>
             </div>
         </form>
     `;
 
     event.preventDefault();
 });
-document.addEventListener('click', (event) => {
-    if (event.target && event.target.id === 'guardarBtn-pro') {
-        let pro = {
-            
-            "producto":"",
-            "cantidad":"",
-            
-        }
-        const inputs = document.querySelectorAll('input, select');
-        inputs.forEach(input => {
-            pro[input.id] = input.value;
-        });
-        Producciones[Date.now()] = pro;
 
-        inputs.forEach(input => {
-            input.value = '';
-        });
-        console.log(Producciones)
-        event.preventDefault();
-    }
-});
 
 costos.addEventListener('click', (event) => {
     document.querySelector('#cards').innerHTML = `
-        <form class="row g-3">
-        <div class="col-md-6">
+        <form class="row g-3 ">
+        <div  class="col-md-4 ">
             <label for="inputState" class="form-label">Costo Indirecto</label>
             <select id="nombre-costo" class="form-select">
                 <option selected>Choose...</option>
@@ -214,11 +186,11 @@ costos.addEventListener('click', (event) => {
 document.addEventListener('click', (event) => {
     if (event.target && event.target.id === 'guardarBtn-cos') {
         let cos = {
-            
+
             "nombre-costo":"",
             "valor-costo":"",
             "descripcion-costo":"",
-            
+
         }
         const inputs = document.querySelectorAll('input, select ,textarea');
         inputs.forEach(input => {
@@ -233,4 +205,3 @@ document.addEventListener('click', (event) => {
         event.preventDefault();
     }
 });
-

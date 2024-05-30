@@ -29,6 +29,7 @@ body::before {
   pointer-events: none; 
   z-index: 0;
 }
+
 #inicio{
   color: #ae4bc7;
   font-size: 1.5rem;
