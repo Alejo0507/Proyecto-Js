@@ -10,6 +10,21 @@ export class calculadoraManoDeObra extends LitElement {
         border-radius:5px;
         height:25px;
         margin:10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+
+        label {
+            align-self: left;
+            text: left;
+            justify-self: start;
+            width: 300px;
+        }
+
+        input {
+            width: 230px;
+            border-radius: 6px;
+        }
         
     }
    
@@ -81,6 +96,11 @@ export class calculadoraManoDeObra extends LitElement {
         text: center;
         justify-content: center;
     }
+
+    #enviar-form {
+        margin-top: 4rem;
+    }
+
     `
 
     
