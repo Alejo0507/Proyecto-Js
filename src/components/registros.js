@@ -77,7 +77,7 @@ document.addEventListener('click', (event) => {
                 Cierres,
                 Cauchos,
                 Lentejuelas,
-                Encajes,
+                Encajes
             }
         };
 
