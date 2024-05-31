@@ -16,7 +16,7 @@ let Producciones ={
 registro.addEventListener('click', (event) => {
     document.querySelector('#cards').innerHTML = `
         <h3></h3>
-        <form class="row g-3">
+        <form class="row g-3 " >
             <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="nombre">
@@ -48,20 +48,13 @@ registro.addEventListener('click', (event) => {
             </div>
             <div class="col-md-2">
                 <label for="inputCity" class="form-label">Cantidad</label>
-                <input  class="form-control" id="cantidad">
+                <input type="text" class="form-control" id="cantidad">
                 
             </div>
             <div class="col-md-2">
                 <label for="inputState" class="form-label">Categoria</label>
                 <select id="categoria" class="form-select">
                     <option selected>Choose...</option>
-                    <option value="Telas">Telas</option>
-                    <option value="Hilos">Hilos</option>
-                    <option value="Botones">Botones</option>
-                    <option value="Cierres">Cierres</option>
-                    <option value="Cauchos">Cauchos</option>
-                    <option value="lentejuelas">lentejuelas</option>
-                    <option value="Encajes">Encajes</option>
                     <option value="Telas">Telas</option>
                     <option value="Hilos">Hilos</option>
                     <option value="Botones">Botones</option>
