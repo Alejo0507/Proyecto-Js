@@ -1,7 +1,7 @@
-
-const registro = document.getElementById('inventario')
-const produccion=document.getElementById('produccion')
-const costos=document.getElementById('Costos-indirectos')
+const registro = document.getElementById('inventario');
+const produccion=document.getElementById('produccion');
+const costos=document.getElementById('Costos-indirectos');
+const URLMP = "https://665630689f970b3b36c49525.mockapi.io/materiaPrima";
 let costo={
 
 }
@@ -19,27 +19,31 @@ registro.addEventListener('click', (event) => {
         <form class="row g-3 " >
             <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombre">
+                <input type="text" class="form-control" name="nombre" id="nombre">
             </div>
             <div class="col-md-4">
                 <label for="inputPassword4" class="form-label">Fecha</label>
-                <input type="date" class="form-control" id="fecha" placeholder="DD/MM/AAAA">
+                <input type="date" class="form-control" name="fechaDeAdquisicion" id="fechaAdqui" placeholder="DD/MM/AAAA">
+            </div>
+            <div class="col-md-4">
+                <label for="inputPassword4" class="form-label">Fecha</label>
+                <input type="date" class="form-control" name="fechaDeVencimiento" id="fechaVenci" placeholder="DD/MM/AAAA">
             </div>
             <div class="col-md-2">
                 <label for="inputEmail4" class="form-label">Costo por unidad</label>
-                <input type="number" class="form-control" id="costoUnidad">
+                <input type="number" class="form-control" name="costoUnidad" id="costoUnidad">
             </div>
             <div class="col-md-6">
                 <label for="inputPassword4" class="form-label">Proveedor</label>
-                <input type="text" class="form-control" id="proveedor">
+                <input type="text" class="form-control" name="proveedor" id="proveedor">
             </div>
             <div class="col-6">
                 <label for="inputAddress" class="form-label">Descripcion</label>
-                <input type="text" class="form-control" id="descripcion" placeholder="">
+                <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="">
             </div>
             <div class="col-4">
                 <label for="inputAddress2" class="form-label">Unidad de Medida</label>
-                <select class="form-select" id="unidadMedida">
+                <select class="form-select" name="unidadMedida" id="unidadMedida">
                 <option selected>Choose...</option>
                 <option value="Metros">Metros</option>
                 <option value="Centimetros">Centimetros</option>
@@ -53,7 +57,7 @@ registro.addEventListener('click', (event) => {
             </div>
             <div class="col-md-2">
                 <label for="inputState" class="form-label">Categoria</label>
-                <select id="categoria" class="form-select">
+                <select id="categoria" name="categoria" class="form-select">
                     <option selected>Choose...</option>
                     <option value="Telas">Telas</option>
                     <option value="Hilos">Hilos</option>
@@ -66,16 +70,13 @@ registro.addEventListener('click', (event) => {
             </div>
             <div class="col-md-4">
                 <label for="inputZip" class="form-label">Ubicacion en Almacen</label>
-                <input type="text" class="form-control" id="ubicacion">
+                <input type="text" class="form-control" name="ubicacion" id="ubicacion">
             </div>
             <div class="col-12">
                 <button type="button" id="guardarBtn-inv" class="btn btn-primary">Guardar</button>
             </div>
         </form>
     `;
-
-    event.preventDefault();
-});
 
 
 
@@ -197,4 +198,5 @@ document.addEventListener('click', (event) => {
         console.log(costo)
         event.preventDefault();
     }
-});
+})
+})
