@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+*{
+  font-family: "Aclonica", sans-serif;
+}
 body{
+  
   height: 100vh;
   background-size: cover;
   display: flex;
@@ -8,6 +12,36 @@ body{
   justify-content:center;
 
 }
+
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.7),  
+    rgba(0, 0, 0, 0.7)  
+  );
+  pointer-events: none; 
+  z-index: 0;
+}
+
+#inicio{
+  color: #ae4bc7;
+  font-size: 1.5rem;
+  text-decoration: none;
+  position: absolute;
+  z-index: 2;
+  margin-right:80%;
+  margin-bottom: 810px;
+}
+#inicio:hover{
+  color: #8d1ea8;
+}
 .imagen-head{
   height: 200px;
 }
@@ -15,38 +49,69 @@ body{
   height: 8rem;
 }
 .title{
-  font-family: "Aclonica", sans-serif;
-  margin-bottom:730px;
+  color: #ae4bc7;
+  margin-bottom:810px;
   position: absolute;
   z-index: 1;
 }
+#contenedor-texto{
+  text-align: center;
+  margin-top: 20px;
+  z-index: 1;
+  color: #ffffff;
+}
+#contenedor-imagenes{
+  z-index: 1;
+  justify-content: space-around;
+  width: 100vw;
+  display: flex;
+}
+.imagenes-principal{
+  border-radius: 10px;
+  z-index: 1;
+}
+#inventario,#produccion,#Costos-indirectos{
+  border: none;
+  color: #ffffff;
+  background-color: #8d1ea8;
+}
+
 header{
   z-index: 0;
   margin-top: 0;
-  margin-bottom: 800px;
+  margin-bottom: 900px;
   position: absolute;
   height: 250px;
   width: 100vw;
 }
+#contenedor-principal{
+  width: 95vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
 .menu-opciones{
-  margin-bottom: 100px;
+  z-index: 1;
+  margin-bottom: 50px;
   border-radius: 10px;
   margin-top: 20px;
   height: 100px;
-  background-color: #e991ff;
+  background-color: #ae4bc7;
   display: flex;
   align-items: center;
   justify-content: center;
   width:80vw;
 }
 #tarjeta{
-  border: none;
+  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   height: 18rem;
   transition: 0.5s ease;
+  
 }
 #tarjeta:hover{
   transform: scale(1.1);
@@ -68,8 +133,17 @@ header{
 #reg{
   color: #ffffff;
 }
+#reg:hover{
+  color: #ae4bc7;
+}
+#inf:hover{
+  color: #ae4bc7;
+}
+#cal:hover{
+  color: #ae4bc7;
+}
 #opcion{
-  background-color: #e991ff;
+  background-color: #ae4bc7;
   margin: 2%;
   transition:all 0.5s ease;
 }
@@ -89,5 +163,8 @@ header{
   width: 98vw;
   background-color:rgba(19, 19, 19,0.7);
 }
-
+#cards{
+  color: #ffffff;
+  z-index: 1;
+}
 
