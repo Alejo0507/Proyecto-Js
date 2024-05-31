@@ -1,7 +1,6 @@
-
-const registro = document.getElementById('inventario')
-const produccion=document.getElementById('produccion')
-const costos=document.getElementById('Costos-indirectos')
+const registro = document.getElementById('inventario');
+const produccion=document.getElementById('produccion');
+const costos=document.getElementById('Costos-indirectos');
 const URLMP = "https://665630689f970b3b36c49525.mockapi.io/materiaPrima";
 let costo={
 
@@ -16,7 +15,7 @@ let Producciones ={
 
 registro.addEventListener('click', (event) => {
     document.querySelector('#cards').innerHTML = `
-        <form id="mpForm" class="row g-3">
+        <form id="formMp" class="row g-3">
             <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Id</label>
                 <input type="number" class="form-control" name="idMateriaPrima"  id="idMp">
@@ -27,11 +26,11 @@ registro.addEventListener('click', (event) => {
             </div>
             <div class="col-md-4">
                 <label for="inputPassword4" class="form-label">Fecha</label>
-                <input type="date" class="form-control" name="fechaDeAdquisicion" id="fecha" placeholder="DD/MM/AAAA">
+                <input type="date" class="form-control" name="fechaDeAdquisicion" id="fechaAdqui" placeholder="DD/MM/AAAA">
             </div>
             <div class="col-md-4">
                 <label for="inputPassword4" class="form-label">Fecha</label>
-                <input type="date" class="form-control" name="fechaDeVencimiento" id="fecha" placeholder="DD/MM/AAAA">
+                <input type="date" class="form-control" name="fechaDeVencimiento" id="fechaVenci" placeholder="DD/MM/AAAA">
             </div>
             <div class="col-md-2">
                 <label for="inputEmail4" class="form-label">Costo por unidad</label>
@@ -88,42 +87,6 @@ registro.addEventListener('click', (event) => {
             </div>
         </form>
     `;
-
-    const mpForm = document.getElementById('mpForm');
-
-    const fetchData = async () => {
-        try {
-            const response = await fetch(URLMP); 
-            const data = await response.json();
-            console.log(data); 
-        } catch (error) {
-            console.error('Error al obtener los datos:', error);
-        }
-    };
-
-    mpForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-
-        try {
-            await fetch(URLMP, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(Object.fromEntries(stock))
-            });
-            fetchData(); // Asegúrate de que la función fetchData esté definida y haga lo necesario para obtener los datos actualizados después de agregar un nuevo elemento
-            mpForm.reset();
-        } catch (error) {
-            console.error('Error al agregar el elemento:', error);
-        }
-    });
-
-    event.preventDefault();
-
-    event.preventDefault();
-});
 
 
 
@@ -246,4 +209,5 @@ document.addEventListener('click', (event) => {
         console.log(costo)
         event.preventDefault();
     }
-});
+})
+})

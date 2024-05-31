@@ -1,34 +1,40 @@
-const mpForm = document.getElementById('mpForm');
 const URLMP = "https://665630689f970b3b36c49525.mockapi.io/materiaPrima";
-const inventoryButton = document.getElementById('inventario');
 
-const fetchData = async () => {
-    try {
-        const response = await fetch(URLMP); 
-        const data = await response.json();
-        console.log(data); 
-    } catch (error) {
-        console.error('Error al obtener los datos:', error);
-    }
-};
+const form = document.getElementById('mpForm');
 
-inventoryButton.addEventListener('click', () => {
-    
-    mpForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formData = new FormData(mpForm);
-    
-        try {
-            await fetch(URLMP, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(Object.fromEntries(formData))
-            });
-            fetchData();
-        } catch (error) {
-            console.error('Error al agregar el elemento:', error);
+form.addEventListener('submit', (event) => {
+    event.preventDefault()
+    let materiaPrima = {
+        "idMateriaPrima": document.getElementById('idMp').value,
+        "nombre": document.getElementById('nombre').value,
+        "fechaDeAdquisicion": document.getElementById('fechaAdqui').value,
+        "fechaDeVencimiento": document.getElementById('fechaVenci').value,
+        "costoUnidad": document.getElementById('costoUnidad').value,
+        "proveedor": document.getElementById('proveedor').value,
+        "descripcion": document.getElementById('descripcion').value,
+        "unidadMedida": document.getElementById('unidadMedida').value,
+        "cantidad": document.getElementById('cantidad').value,
+        "categoria": document.getElementById('categoria').value,
+        "ubicacion": document.getElementById('ubicacion').value,
+    };
+
+    fetch(URLMP, {
+        method: 'POST',
+        headers: {'content-type':'application/json'},
+        // Send your data in the request body as JSON
+        body: JSON.stringify(materiaPrima)
+      }).then(res => {
+        if (res.ok) {
+            return res.json();
         }
-    });
-})
+        // handle error
+      }).then(task => {
+        // do something with the new task
+      }).catch(error => {
+        // handle error
+      })
+    
+      form.reset()
+});
+
+
