@@ -45,11 +45,16 @@ body::before {
     rgba(0, 0, 0, 0.7)  
   );
   pointer-events: none; 
-  z-index: 0;
+  z-index: -1;
 }
 .boton-registros{
   display: flex;
   justify-content: center;
+}
+tabla-informe-costo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #inicio{
@@ -195,4 +200,5 @@ header{
   color: #ffffff;
   z-index: 1;
 }
+
 
