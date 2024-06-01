@@ -15,9 +15,9 @@ export class tablaInforme extends LitElement {
             flex-direction: column
             z-index: 30;
             width: 100%;;
-            height: 20rem;
+            height: 30rem;
             overflow: scroll;
-            justify-self: center;          
+            justify-self: center;         
         }
 
         tbody, thead {
@@ -37,6 +37,10 @@ export class tablaInforme extends LitElement {
             max-width: 300px; /* Establece la altura máxima */
             overflow-y: auto; /* Agrega un scrollbar vertical si es necesario */
         }
+
+        input {
+            display: none;
+        }
     `
 
     connectedCallback() {
@@ -53,10 +57,20 @@ export class tablaInforme extends LitElement {
         }
     }
 
+    handleSearch(event) {
+        const searchTerm = event.target.value.toLowerCase(); // Obtén el valor del campo de búsqueda y conviértelo a minúsculas
+        this.filteredData = this.datosAPI.filter(item =>
+            item.idMateriaPrima.toLowerCase().includes(searchTerm) || // Filtra por ID
+            item.nombre.toLowerCase().includes(searchTerm) // Filtra por nombre
+        );
+        this.requestUpdate(); // Actualiza la tabla con los resultados filtrados
+    }
+
     render() {
         return html`
+            <input type="text" id="searchInput" @input="${this.handleSearch}">
             <table id="tablaMp">
-                <!-- Encabezados de la tabla -->
+
         
                 <tr>
                     <th>Id</th>
