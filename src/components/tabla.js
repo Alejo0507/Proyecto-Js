@@ -21,10 +21,6 @@ export class tablaInforme extends LitElement {
         justify-self: center;          
     }
     
-    
-   
-
-   
     th {
         position: sticky;
         text-align: left;
