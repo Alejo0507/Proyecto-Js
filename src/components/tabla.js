@@ -21,7 +21,7 @@ export class tablaInforme extends LitElement {
         justify-self: center;          
     }
     
-    
+    /* Estilos para tbody y thead */
    
 
    

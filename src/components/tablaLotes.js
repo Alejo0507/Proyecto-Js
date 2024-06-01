@@ -1,7 +1,7 @@
 import { LitElement, html, css } from "lit";
 import { fetchData } from "../scripts/mockapi/obtenerDatos";
 import '../scripts/mockapi/obtenerDatos';
-const URLMP = "https://66586d8e5c36170526486c75.mockapi.io/lotes";
+const URLL = "https://66586d8e5c36170526486c75.mockapi.io/lotes";
 
 export class tablaInformeLote extends LitElement {
     constructor() {
@@ -93,7 +93,7 @@ export class tablaInformeLote extends LitElement {
 
     async fetchDataFromAPI() {
         try {
-            this.datosAPI = await fetchData(URLMP); // Llama a fetchData y pasa la URL como argumento
+            this.datosAPI = await fetchData(URLL); // Llama a fetchData y pasa la URL como argumento
             this.requestUpdate(); // Actualiza el componente para renderizar las filas
         } catch (error) {
             console.error('Error al obtener los datos:', error);
@@ -103,8 +103,8 @@ export class tablaInformeLote extends LitElement {
     handleSearch(event) {
         const searchTerm = event.target.value.toLowerCase(); // Obtén el valor del campo de búsqueda y conviértelo a minúsculas
         this.filteredData = this.datosAPI.filter(item =>
-            item.idMateriaPrima.toLowerCase().includes(searchTerm) || // Filtra por ID
-            item.nombre.toLowerCase().includes(searchTerm) // Filtra por nombre
+            item.id.toLowerCase().includes(searchTerm) || // Filtra por ID
+            item.producto.toLowerCase().includes(searchTerm) // Filtra por nombre
         );
         this.requestUpdate(); // Actualiza la tabla con los resultados filtrados
     }
