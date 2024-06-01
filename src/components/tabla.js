@@ -8,7 +8,10 @@ export class tablaInforme extends LitElement {
     static styles = css`
 
     table {
-        color: #fff;
+        background-color: cyan;
+        display: flex;
+        flex-direction: column;
+        
     }
 
         td {
