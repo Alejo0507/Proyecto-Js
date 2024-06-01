@@ -14,14 +14,20 @@ body{
 }
 
 #mpForm {
+  display: flex;
+  justify-content: center;
   display: none;
 }
 
 #productForm {
+  display: flex;
+  justify-content: center;
   display: none;
 }
 
 #costoForm {
+  display: flex;
+  justify-content: center;
   display: none;
 }
 
@@ -40,6 +46,10 @@ body::before {
   );
   pointer-events: none; 
   z-index: 0;
+}
+.boton-registros{
+  display: flex;
+  justify-content: center;
 }
 
 #inicio{
