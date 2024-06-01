@@ -8,6 +8,7 @@ import './src/scripts/materiaPrima/agregarApi'
 import './src/scripts/materiaPrima/registro'
 import './src/scripts/productos/registro'
 import './src/scripts/costosIndirectos/registro'
+import './src/components/tabla'
 import './src/scripts/prendasMokapi'
 import './src/scripts/prendasMokapi'
 
