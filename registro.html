@@ -27,7 +27,7 @@
         </div>
         <div id="prodDiv" class="card text-center mb-3" style="width: 18rem; border: none; background-color: transparent;">
             <div id="tarjeta" class="card-body">
-                <h5 class="card-title text-light">Produccion de productos</h5>
+                <h5 class="card-title text-light">Lotes de produccion</h5>
                 <img class="iconos" src="/public/blogs.png" alt="blog">
                 <button href="#" id="produccion" class="btn btn-primary">Produccion</button>
             </div>
@@ -44,20 +44,20 @@
     <div id="cards">
         
         <form id="mpForm" class="row g-3">
-            <div class="col-md-6">
+            <div class="col-md-2">
                 <label for="inputEmail4" class="form-label">Id</label>
                 <input type="number" class="form-control" name="idMateriaPrima"  id="idMp">
             </div>
             <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Nombre</label>
+                <label for="inputEmail4" class="form-label">Producto</label>
                 <input type="text" class="form-control" name="nombre" id="nombre">
             </div>
-            <div class="col-md-4">
-                <label for="inputPassword4" class="form-label">Fecha</label>
+            <div class="col-md-3">
+                <label for="inputPassword4" class="form-label">Fecha Fabricacion</label>
                 <input type="date" class="form-control" name="fechaDeAdquisicion" id="fechaAdqui" placeholder="DD/MM/AAAA">
             </div>
-            <div class="col-md-4">
-                <label for="inputPassword4" class="form-label">Fecha</label>
+            <div class="col-md-3">
+                <label for="inputPassword4" class="form-label">Fecha Vencimiento</label>
                 <input type="date" class="form-control" name="fechaDeVencimiento" id="fechaVenci" placeholder="DD/MM/AAAA">
             </div>
             <div class="col-md-2">
@@ -68,11 +68,11 @@
                 <label for="inputPassword4" class="form-label">Proveedor</label>
                 <input type="text" class="form-control" name="proveedor" id="proveedor">
             </div>
-            <div class="col-6">
+            <div class="col-11">
                 <label for="inputAddress" class="form-label">Descripcion</label>
                 <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="">
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <label for="inputAddress2" class="form-label">Unidad de Medida</label>
                 <select class="form-select" name="unidadMedida" id="unidadMedida">
                 <option selected>Choose...</option>
@@ -97,26 +97,19 @@
                     <option value="Cauchos">Cauchos</option>
                     <option value="lentejuelas">lentejuelas</option>
                     <option value="Encajes">Encajes</option>
-                    <option value="Telas">Telas</option>
-                    <option value="Hilos">Hilos</option>
-                    <option value="Botones">Botones</option>
-                    <option value="Cierres">Cierres</option>
-                    <option value="Cauchos">Cauchos</option>
-                    <option value="lentejuelas">lentejuelas</option>
-                    <option value="Encajes">Encajes</option>
                 </select>
             </div>
             <div class="col-md-4">
                 <label for="inputZip" class="form-label">Ubicacion en Almacen</label>
                 <input type="text" class="form-control" name="ubicacion" id="ubicacion">
             </div>
-            <div class="col-12">
+            <div class="boton-registros col-12">
                 <button type="submit" id="guardarBtn-inv" class="btn btn-primary">Guardar</button>
             </div>
         </form>
 
         <form id="productForm" class="row g-3">
-            <div class="col-md-12">
+            <div class="col-md-6">
             <label for="inputState" class="form-label">Producto</label>
             <select id="producto" class="form-select">
                 <option selected>Choose...</option>
@@ -129,13 +122,13 @@
                 <option value="Short">Short</option>
             </select>
         </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Cantidad de Productos</label>
                 <input type="number" class="form-control" id="costoUnidad">
             </div>
             
            
-            <div class="col-12">
+            <div class=" boton-registros col-2">
                 <button type="submit" id="guardarBtn" class="btn btn-primary">Guardar</button>
             </div>
         </form>
@@ -161,7 +154,7 @@
                     <label for="inputEmail4" class="form-label">Valor de Costo Indirecto</label>
                     <input type="number" class="form-control" id="valor-costo">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <label for="inputEmail4" class="form-label">Descripcion</label>
                     <br>
                     <textarea id="descripcion-costo" name="comentarios" style="height:7rem; width:30rem;" >
@@ -169,7 +162,7 @@
                 </div>
                 
                
-                <div class="col-12">
+                <div class=" boton-registros col-12">
                     <button type="button" id="guardarBtn-cos" class="btn btn-primary">Guardar</button>
                 </div>
             </form>
