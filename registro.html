@@ -16,22 +16,24 @@
         <a id="opcion" style="text-decoration: none;" href="/calculador.html"><h4 id="cal">Calcular</h4></a>
         <a id="opcion" style="text-decoration: none;" href="/informes.html"><h4 id="inf">Informes</h4></a>
     </div>
-    <div id="cards" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+    <div id="inventoryDiv" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
         <div class="card text-center mb-3" style="width: 18rem; border: none; background-color: transparent;">
             <div id="tarjeta" class="card-body">
                 <h5 class="card-title text-light">Registro de Materia Prima</h5>
                 <img class="iconos" src="/public/blogs.png" alt="blog">
                 <button href="#" id="inventario" class="btn btn-primary">Inventario</button>
             </div>
+
+
         </div>
-        <div class="card text-center mb-3" style="width: 18rem; border: none; background-color: transparent;">
+        <div id="prodDiv" class="card text-center mb-3" style="width: 18rem; border: none; background-color: transparent;">
             <div id="tarjeta" class="card-body">
                 <h5 class="card-title text-light">Produccion de productos</h5>
                 <img class="iconos" src="/public/blogs.png" alt="blog">
                 <button href="#" id="produccion" class="btn btn-primary">Produccion</button>
             </div>
         </div>
-        <div class="card text-center mb-3" style="width: 18rem; border: none; background-color: transparent;">
+        <div id="costosDiv" class="card text-center mb-3" style="width: 18rem; border: none; background-color: transparent;">
             <div id="tarjeta" class="card-body">
                 <h5 class="card-title text-light">Registrar costos indirectos</h5>
                 <img class="iconos" src="/public/blogs.png" alt="blog">
@@ -40,7 +42,139 @@
         </div>
         
     </div>
+    <div id="cards">
+        
+        <form id="mpForm" class="row g-3">
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Id</label>
+                <input type="number" class="form-control" name="idMateriaPrima"  id="idMp">
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Nombre</label>
+                <input type="text" class="form-control" name="nombre" id="nombre">
+            </div>
+            <div class="col-md-4">
+                <label for="inputPassword4" class="form-label">Fecha</label>
+                <input type="date" class="form-control" name="fechaDeAdquisicion" id="fechaAdqui" placeholder="DD/MM/AAAA">
+            </div>
+            <div class="col-md-4">
+                <label for="inputPassword4" class="form-label">Fecha</label>
+                <input type="date" class="form-control" name="fechaDeVencimiento" id="fechaVenci" placeholder="DD/MM/AAAA">
+            </div>
+            <div class="col-md-2">
+                <label for="inputEmail4" class="form-label">Costo por unidad</label>
+                <input type="number" class="form-control" name="costoUnidad" id="costoUnidad">
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Proveedor</label>
+                <input type="text" class="form-control" name="proveedor" id="proveedor">
+            </div>
+            <div class="col-6">
+                <label for="inputAddress" class="form-label">Descripcion</label>
+                <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="">
+            </div>
+            <div class="col-4">
+                <label for="inputAddress2" class="form-label">Unidad de Medida</label>
+                <select class="form-select" name="unidadMedida" id="unidadMedida">
+                <option selected>Choose...</option>
+                <option value="Metros">Metros</option>
+                <option value="Centimetros">Centimetros</option>
+                </select>
+            
+            </div>
+            <div class="col-md-2">
+                <label for="inputCity" class="form-label">Cantidad</label>
+                <input  class="form-control" name="cantidad" id="cantidad">
+                
+            </div>
+            <div class="col-md-2">
+                <label for="inputState" class="form-label">Categoria</label>
+                <select id="categoria" name="categoria" class="form-select">
+                    <option selected>Choose...</option>
+                    <option value="Telas">Telas</option>
+                    <option value="Hilos">Hilos</option>
+                    <option value="Botones">Botones</option>
+                    <option value="Cierres">Cierres</option>
+                    <option value="Cauchos">Cauchos</option>
+                    <option value="lentejuelas">lentejuelas</option>
+                    <option value="Encajes">Encajes</option>
+                    <option value="Telas">Telas</option>
+                    <option value="Hilos">Hilos</option>
+                    <option value="Botones">Botones</option>
+                    <option value="Cierres">Cierres</option>
+                    <option value="Cauchos">Cauchos</option>
+                    <option value="lentejuelas">lentejuelas</option>
+                    <option value="Encajes">Encajes</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="inputZip" class="form-label">Ubicacion en Almacen</label>
+                <input type="text" class="form-control" name="ubicacion" id="ubicacion">
+            </div>
+            <div class="col-12">
+                <button type="submit" id="guardarBtn-inv" class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
+
+        <form id="productForm" class="row g-3">
+            <div class="col-md-12">
+            <label for="inputState" class="form-label">Producto</label>
+            <select id="producto" class="form-select">
+                <option selected>Choose...</option>
+                <option value="Camisa manga Larga">Camisa manga Larga</option>
+                <option value="Camisa manga Corta">Camisa manga Corta</option>
+                <option value="Vestido Largo">Vestido Largo</option>
+                <option value="Vestido Corto">Vestido Corto</option>
+                <option value="Pantalon de Jean">Pantalon de Jean</option>
+                <option value="Pantalon de Vestir">Pantalon de Vestir</option>
+                <option value="Short">Short</option>
+            </select>
+        </div>
+            <div class="col-md-4">
+                <label for="inputEmail4" class="form-label">Cantidad de Productos</label>
+                <input type="number" class="form-control" id="costoUnidad">
+            </div>
+            
+           
+            <div class="col-12">
+                <button type="submit" id="guardarBtn" class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
+
+        <form id="costoForm" class="row g-3 ">
+            <div  class="col-md-4 ">
+                <label for="inputState" class="form-label">Costo Indirecto</label>
+                <select id="nombre-costo" class="form-select">
+                    <option selected>Choose...</option>
+                    <option value="Luz/Electricidad">Luz/Electricidad</option>
+                    <option value="Agua/Alcantarillado">Agua/Alcantarillado</option>
+                    <option value="Mantenimiento de Maquinas">Mantenimiento de Maquinas</option>
+                    <option value="Costos de Arriendo">Costos de Arriendo</option>
+                    <option value="Costos de administración">Costos de administración</option>
+                    <option value="Costos de ventas y marketing">Costos de ventas y marketing</option>
+                    <option value="Costos de seguros">Costos de seguros</option>
+                    <option value="Costos de tecnología de la información">Costos de tecnología de la información</option>
+                    <option value="Costos financieros">Costos financieros</option>
+                </select>
+            </div>
+            
+                <div class="col-md-3">
+                    <label for="inputEmail4" class="form-label">Valor de Costo Indirecto</label>
+                    <input type="number" class="form-control" id="valor-costo">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Descripcion</label>
+                    <br>
+                    <textarea id="descripcion-costo" name="comentarios" style="height:7rem; width:30rem;" >
+                     </textarea>
+                </div>
+                
+               
+                <div class="col-12">
+                    <button type="button" id="guardarBtn-cos" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+    </div>
     <script type="module" src="/main.js"></script>
-    <script type="module" src="/src/components/registros.js"></script>
 </body>
 </html>

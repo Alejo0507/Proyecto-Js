@@ -13,6 +13,18 @@ body{
 
 }
 
+#mpForm {
+  display: none;
+}
+
+#productForm {
+  display: none;
+}
+
+#costoForm {
+  display: none;
+}
+
 
 body::before {
   content: '';
