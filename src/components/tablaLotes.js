@@ -10,7 +10,7 @@ export class tablaInformeLote extends LitElement {
     }
     static styles = css`
     /* Contenedor de la tabla */
-    #tablaMp {
+    #tablaL {
         
         display: none; 
         flex-direction: column;
@@ -47,27 +47,27 @@ export class tablaInformeLote extends LitElement {
     }
     
     
-    #tablaMp::-webkit-scrollbar {
+    #tablaL::-webkit-scrollbar {
         width: 12px; 
         
     }
     
-    #tablaMp::-webkit-scrollbar-track {
+    #tablaL::-webkit-scrollbar-track {
         border-radius: 10px;
         
         background-color: #ae4bc7;
     }
     
-    #tablaMp::-webkit-scrollbar-thumb {
+    #tablaL::-webkit-scrollbar-thumb {
         background: rgb(113, 24, 134);
          border: 3px solid #ae4bc7;
         border-radius: 10px; 
     }
     
-    #tablaMp::-webkit-scrollbar-thumb:hover {
+    #tablaL::-webkit-scrollbar-thumb:hover {
         background: #fff; 
     }
-    #tablaMp::-webkit-scrollbar-corner {
+    #tablaL::-webkit-scrollbar-corner {
         display: none; 
 
     }
@@ -112,7 +112,7 @@ export class tablaInformeLote extends LitElement {
     render() {
         return html`
             
-            <table id="tablaMp">
+            <table id="tablaL">
 
         
                 <tr>
