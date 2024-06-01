@@ -11,4 +11,5 @@ import './src/scripts/costosIndirectos/registro'
 import './src/scripts/costosIndirectos/agregarApi'
 import './src/scripts/prendasMokapi'
 import './src/scripts/prendasMokapi'
+import './src/scripts/costosIndirectos/gastosMP'
 
