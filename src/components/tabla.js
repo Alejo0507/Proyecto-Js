@@ -100,10 +100,20 @@ export class tablaInforme extends LitElement {
         }
     }
 
+    handleSearch(event) {
+        const searchTerm = event.target.value.toLowerCase(); // Obtén el valor del campo de búsqueda y conviértelo a minúsculas
+        this.filteredData = this.datosAPI.filter(item =>
+            item.idMateriaPrima.toLowerCase().includes(searchTerm) || // Filtra por ID
+            item.nombre.toLowerCase().includes(searchTerm) // Filtra por nombre
+        );
+        this.requestUpdate(); // Actualiza la tabla con los resultados filtrados
+    }
+
     render() {
         return html`
+            <input type="text" id="searchInput" @input="${this.handleSearch}">
             <table id="tablaMp">
-                <!-- Encabezados de la tabla -->
+
         
                 <tr>
                     <th  style="position: sticky; top: 0;">Id</th>
