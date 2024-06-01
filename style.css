@@ -51,6 +51,11 @@ body::before {
   display: flex;
   justify-content: center;
 }
+tabla-informe-costo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 #inicio{
   color: #ae4bc7;
@@ -195,4 +200,5 @@ header{
   color: #ffffff;
   z-index: 1;
 }
+
 
