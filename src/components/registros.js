@@ -15,7 +15,11 @@ let Producciones ={
 
 registro.addEventListener('click', (event) => {
     document.querySelector('#cards').innerHTML = `
-        <form class="row g-3">
+        <form id="mpForm"class="row g-3">
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Id</label>
+                <input type="number" class="form-control" id="idMp">
+            </div>
             <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="nombre">
