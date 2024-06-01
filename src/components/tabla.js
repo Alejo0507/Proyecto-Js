@@ -96,6 +96,31 @@ export class tablaInforme extends LitElement {
         }
     }
 
+    eliminarElemento(id) {
+        // Guardar una copia de respaldo de los datos antes de actualizar la tabla
+        const datosAPIBackup = [...this.datosAPI];
+    
+        this.datosAPI = this.datosAPI.filter(item => item.id !== id);
+        this.requestUpdate();
+    
+        // Enviar solicitud de eliminación al mock API
+        fetch(`${URLMP}/${id}`, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('No se pudo eliminar el elemento del mock API');
+            }
+            this.requestUpdate();
+        })
+        .catch(error => {
+            console.error('Error al eliminar el elemento del mock API:', error);
+            // En caso de error, restaurar los datos de respaldo
+            this.datosAPI = datosAPIBackup;
+            this.requestUpdate(); // Actualizar la tabla para restaurar los datos
+        });
+    }
+
     render() {
         return html`
             
@@ -131,9 +156,9 @@ export class tablaInforme extends LitElement {
                         <td>${item.categoria}</td>
                         <td>${item.ubicacion}</td>
                         <td id="actionButtons">
-                        <button id="editButton"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f8f00"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg></button> 
-                        <button id="deleteButton"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#EA3323"><path d="m376-300 104-104 104 104 56-56-104-104 104-104-56-56-104 104-104-104-56 56 104 104-104 104 56 56Zm-96 180q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520Zm-400 0v520-520Z"/></svg></button>
-            
+                            <button id="editButton">Editar</button> 
+                            <button @click=${() => this.eliminarElemento(item.id)} id="deleteButton">Delete</button>
+                
                         </td>
                     
                     </tr>
