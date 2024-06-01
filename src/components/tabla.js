@@ -97,13 +97,13 @@ export class tablaInforme extends LitElement {
     }
 
     eliminarElemento(id) {
-        // Guardar una copia de respaldo de los datos antes de actualizar la tabla
+        // Backup por si ocurre un error no se elimine de la tabla 
         const datosAPIBackup = [...this.datosAPI];
     
         this.datosAPI = this.datosAPI.filter(item => item.id !== id);
         this.requestUpdate();
     
-        // Enviar solicitud de eliminación al mock API
+        
         fetch(`${URLMP}/${id}`, {
             method: 'DELETE'
         })
@@ -115,9 +115,66 @@ export class tablaInforme extends LitElement {
         })
         .catch(error => {
             console.error('Error al eliminar el elemento del mock API:', error);
-            // En caso de error, restaurar los datos de respaldo
+
             this.datosAPI = datosAPIBackup;
             this.requestUpdate(); // Actualizar la tabla para restaurar los datos
+        });
+    }
+
+    editarElemento(id) {
+        // Encuentra el elemento que se va a editar en datosAPI
+        const elementoAEditar = this.datosAPI.find(item => item.id === id);
+        
+        // Muestra un formulario o una interfaz para que el usuario edite los datos
+        const nombre = prompt("Ingrese el nuevo nombre:", elementoAEditar.nombre);
+        const fechaAdquisicion = prompt("Ingrese la nueva fecha de adquisición:", elementoAEditar.fechaDeAdquisicion);
+        const fechaVencimiento = prompt("Ingrese la nueva fecha de vencimiento:", elementoAEditar.fechaDeVencimiento);
+        const costoUnidad = prompt("Ingrese el nuevo costo de unidad:", elementoAEditar.costoUnidad);
+        const proveedor = prompt("Ingrese el nuevo proveedor:", elementoAEditar.proveedor);
+        const descripcion = prompt("Ingrese la nueva descripcion:", elementoAEditar.descripcion);
+        const unidadMedida = prompt("Ingrese la nueva unidad de medida:", elementoAEditar.unidadMedida);
+        const cantidad = prompt("Ingrese la nueva cantidad de stock:", elementoAEditar.cantidad);
+        const categoria = prompt("Ingrese la nueva categoría:", elementoAEditar.categoria);
+        const ubicacion = prompt("Ingrese la nueva ubicacion:", elementoAEditar.ubicacion);
+        
+        
+        // Si el usuario cancela el proceso de edición, no se hace nada
+        if (nombre === null || fechaAdquisicion === null) {
+            return;
+        }
+        
+        // Actualiza los datos del elemento
+        elementoAEditar.nombre = nombre;
+        elementoAEditar.fechaDeAdquisicion = fechaAdquisicion;
+        elementoAEditar.fechaDeVencimiento = fechaVencimiento;
+        elementoAEditar.costoUnidad = costoUnidad;
+        elementoAEditar.proveedor = proveedor;
+        elementoAEditar.descripcion = descripcion;
+        elementoAEditar.unidadMedida = unidadMedida;
+        elementoAEditar.cantidad = cantidad;
+        elementoAEditar.categoria = categoria;
+        elementoAEditar.ubicacion = ubicacion;
+
+       
+        
+        // Envía una solicitud PUT al servidor para actualizar el elemento
+        fetch(`${URLMP}/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(elementoAEditar)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('No se pudo actualizar el elemento en el mock API');
+            }
+            // Si la respuesta es exitosa, actualiza la tabla o la vista para reflejar los cambios
+            this.fetchDataFromAPI(); // Vuelve a obtener los datos del API para refrescar la tabla
+        })
+        .catch(error => {
+            console.error('Error al actualizar el elemento en el mock API:', error);
+            // Manejar el error según sea necesario
         });
     }
 
@@ -156,7 +213,7 @@ export class tablaInforme extends LitElement {
                         <td>${item.categoria}</td>
                         <td>${item.ubicacion}</td>
                         <td id="actionButtons">
-                            <button id="editButton">Editar</button> 
+                            <button @click=${() => this.editarElemento(item.id)} id="editButton">Editar</button> 
                             <button @click=${() => this.eliminarElemento(item.id)} id="deleteButton">Delete</button>
                 
                         </td>
