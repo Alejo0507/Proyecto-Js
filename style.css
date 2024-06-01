@@ -97,6 +97,12 @@ body::before {
   color: #ffffff;
   background-color: #8d1ea8;
 }
+tabla-informe{
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  z-index: 2;
+}
 
 header{
   z-index: 0;
