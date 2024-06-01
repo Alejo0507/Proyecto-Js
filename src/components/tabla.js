@@ -96,6 +96,31 @@ export class tablaInforme extends LitElement {
         }
     }
 
+    eliminarElemento(id) {
+        // Guardar una copia de respaldo de los datos antes de actualizar la tabla
+        const datosAPIBackup = [...this.datosAPI];
+    
+        this.datosAPI = this.datosAPI.filter(item => item.id !== id);
+        this.requestUpdate();
+    
+        // Enviar solicitud de eliminación al mock API
+        fetch(`${URLMP}/${id}`, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('No se pudo eliminar el elemento del mock API');
+            }
+            this.requestUpdate();
+        })
+        .catch(error => {
+            console.error('Error al eliminar el elemento del mock API:', error);
+            // En caso de error, restaurar los datos de respaldo
+            this.datosAPI = datosAPIBackup;
+            this.requestUpdate(); // Actualizar la tabla para restaurar los datos
+        });
+    }
+
     render() {
         return html`
             
@@ -132,7 +157,7 @@ export class tablaInforme extends LitElement {
                         <td>${item.ubicacion}</td>
                         <td id="actionButtons">
                             <button id="editButton">Editar</button> 
-                            <button id="deleteButton">Delete</button>
+                            <button @click=${() => this.eliminarElemento(item.id)} id="deleteButton">Delete</button>
                 
                         </td>
                     
