@@ -8,7 +8,7 @@ const infSec3 = document.getElementById('info3');
 const tablaRoot = document.querySelector('tabla-informe').shadowRoot;
 const tablaLot=document.querySelector('tabla-informe-lote').shadowRoot;
 const tabla = tablaRoot.getElementById('tablaMp');
-const tablaLote = tablaLot.getElementById('tablaMp')
+const tablalot=document.getElementById('tablaL')
 const searchInput = tablaRoot.getElementById('searchInput');
 
 infButton.addEventListener('click', () => {
@@ -22,6 +22,7 @@ infButtondos.addEventListener('click', () => {
     infSec1.style.display = "none";
     infSec2.style.display = "none";
     infSec3.style.display = "none";
-    tablaLote.style.display = "flex";
+    tablalot.style.display = "flex";
     searchInput.style.display = "flex";
+   
 })
