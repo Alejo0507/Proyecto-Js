@@ -21,10 +21,6 @@ export class tablaInforme extends LitElement {
         justify-self: center;          
     }
     
-    /* Estilos para tbody y thead */
-   
-
-   
     th {
         position: sticky;
         text-align: left;
@@ -100,15 +96,6 @@ export class tablaInforme extends LitElement {
         }
     }
 
-    handleSearch(event) {
-        const searchTerm = event.target.value.toLowerCase(); // Obtén el valor del campo de búsqueda y conviértelo a minúsculas
-        this.filteredData = this.datosAPI.filter(item =>
-            item.idMateriaPrima.toLowerCase().includes(searchTerm) || // Filtra por ID
-            item.nombre.toLowerCase().includes(searchTerm) // Filtra por nombre
-        );
-        this.requestUpdate(); // Actualiza la tabla con los resultados filtrados
-    }
-
     render() {
         return html`
             
@@ -116,23 +103,20 @@ export class tablaInforme extends LitElement {
 
         
                 <tr>
-                    <th  style="position: sticky; top: 0;">Id</th>
-                    <th  style="position: sticky; top: 0;">Nombre</th>
-                    <th  style="position: sticky; top: 0;">Fecha adquisicion</th>
-                    <th  style="position: sticky; top: 0;">Fecha vencimiento</th>
-                    <th  style="position: sticky; top: 0;">Costo unidad</th>
-                    <th  style="position: sticky; top: 0;">Proveedor</th>
-                    <th  style="position: sticky; top: 0;">Descripcion</th>
-                    <th  style="position: sticky; top: 0;">Unidad de medida</th>
-                    <th  style="position: sticky; top: 0;">Stock</th>
-                    <th  style="position: sticky; top: 0;">Categoria</th>
-                    <th  style="position: sticky; top: 0;">Ubicacion</th>
-                    <th  style="position: sticky; top: 0;">Acciones</th>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Fecha adquisicion</th>
+                    <th>Fecha vencimiento</th>
+                    <th>Costo unidad</th>
+                    <th>Proveedor</th>
+                    <th>Descripcion</th>
+                    <th>Unidad de medida</th>
+                    <th>Stock</th>
+                    <th>Categoria</th>
+                    <th>Ubicacion</th>
+                    <th>Acciones</th>
                 </tr>
 
-                <!-- Cuerpo de la tabla -->
-
-                <!-- Renderiza las filas basadas en los datos de la API -->
                 ${this.datosAPI.map(item => html`
                     <tr>
                         <td>${item.idMateriaPrima}</td>
@@ -147,8 +131,8 @@ export class tablaInforme extends LitElement {
                         <td>${item.categoria}</td>
                         <td>${item.ubicacion}</td>
                         <td id="actionButtons">
-                            <button id="editButton"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f8f00"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg></button> 
-                            <button id="deleteButton"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#EA3323"><path d="m376-300 104-104 104 104 56-56-104-104 104-104-56-56-104 104-104-104-56 56 104 104-104 104 56 56Zm-96 180q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520Zm-400 0v520-520Z"/></svg></button>
+                            <button id="editButton">Editar</button> 
+                            <button id="deleteButton">Delete</button>
                 
                         </td>
                     
