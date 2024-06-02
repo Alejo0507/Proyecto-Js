@@ -136,15 +136,6 @@ export class tablaInformeLote extends LitElement {
     }
 
 
-    handleSearch(event) {
-        const searchTerm = event.target.value.toLowerCase(); // Obtén el valor del campo de búsqueda y conviértelo a minúsculas
-        this.filteredData = this.datosAPI.filter(item =>
-            item.id.toLowerCase().includes(searchTerm) || // Filtra por ID
-            item.producto.toLowerCase().includes(searchTerm) // Filtra por nombre
-        );
-        this.requestUpdate(); // Actualiza la tabla con los resultados filtrados
-    }
-
     render() {
         return html`
             

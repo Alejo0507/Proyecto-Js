@@ -129,24 +129,65 @@ export class tablaInforme extends LitElement {
     }
 
     editarElemento(id) {
-        // Encuentra el elemento que se va a editar en datosAPI
+  
         const elementoAEditar = this.datosAPI.find(item => item.id === id);
         
-        // Muestra un formulario o una interfaz para que el usuario edite los datos
         const nombre = prompt("Ingrese el nuevo nombre:", elementoAEditar.nombre);
-        const fechaAdquisicion = prompt("Ingrese la nueva fecha de adquisición:", elementoAEditar.fechaDeAdquisicion);
-        const fechaVencimiento = prompt("Ingrese la nueva fecha de vencimiento:", elementoAEditar.fechaDeVencimiento);
-        const costoUnidad = prompt("Ingrese el nuevo costo de unidad:", elementoAEditar.costoUnidad);
+        // Validación de que el prompt reciba una fecha valida
+        let fechaAdquisicion;
+        while (true) {
+            fechaAdquisicion = prompt("Ingrese la nueva fecha de adquisicion (YYYY-MM-DD):", elementoAEditar.fechaDeAdquisicion);
+            if (fechaAdquisicion !== null && !isNaN(Date.parse(fechaAdquisicion))) { // Si le fecha ingresada es valida
+                fechaAdquisicion = new Date(fechaAdquisicion).toISOString().split('T')[0]; 
+                break;
+            } else {
+                alert("Por favor ingrese una fecha válida en formato YYYY-MM-DD.");
+            }
+        }
+
+        let fechaVencimiento;
+        while (true) {
+            fechaVencimiento = prompt("Ingrese la nueva fecha de vencimiento (YYYY-MM-DD):", elementoAEditar.fechaVencimiento);
+            if (fechaVencimiento !== null && !isNaN(Date.parse(fechaVencimiento))) {
+                fechaVencimiento = new Date(fechaVencimiento).toISOString().split('T')[0];
+                break;
+            } else {
+                alert("Por favor ingrese una fecha válida en formato YYYY-MM-DD.");
+            }
+        }
+
+        let costoUnidad;
+        while (true) {
+            costoUnidad = prompt("Ingrese el nuevo costo por unidad:", elementoAEditar.costoUnidad);
+            if (costoUnidad !== null && !isNaN(costoUnidad) && costoUnidad.trim() !== "") {
+                costoUnidad = parseFloat(costoUnidad);
+                break;
+            } else {
+                alert("Por favor ingrese un número válido para el costoUnidad.");
+            }
+        }
+        
         const proveedor = prompt("Ingrese el nuevo proveedor:", elementoAEditar.proveedor);
         const descripcion = prompt("Ingrese la nueva descripcion:", elementoAEditar.descripcion);
         const unidadMedida = prompt("Ingrese la nueva unidad de medida:", elementoAEditar.unidadMedida);
-        const cantidad = prompt("Ingrese la nueva cantidad de stock:", elementoAEditar.cantidad);
+
+        let cantidad;
+        while (true) {
+            cantidad = prompt("Ingrese la nueva cantidad:", elementoAEditar.cantidad);
+            if (cantidad !== null && !isNaN(cantidad) && cantidad.trim() !== "") {
+                cantidad = parseFloat(cantidad);
+                break;
+            } else {
+                alert("Por favor ingrese un número válido para el cantidad.");
+            }
+        }
+        
         const categoria = prompt("Ingrese la nueva categoría:", elementoAEditar.categoria);
         const ubicacion = prompt("Ingrese la nueva ubicacion:", elementoAEditar.ubicacion);
         
         
         
-        // Si el usuario cancela el proceso de edición, no se hace nada
+
         if (nombre === null || fechaAdquisicion === null) {
             return;
         }
@@ -154,7 +195,7 @@ export class tablaInforme extends LitElement {
         // Actualiza los datos del elemento
         elementoAEditar.nombre = nombre;
         elementoAEditar.fechaDeAdquisicion = fechaAdquisicion;
-        elementoAEditar.fechaDeVencimiento = fechaVencimiento;
+        elementoAEditar.fechaVencimiento = fechaVencimiento;
         elementoAEditar.costoUnidad = costoUnidad;
         elementoAEditar.proveedor = proveedor;
         elementoAEditar.descripcion = descripcion;
@@ -212,7 +253,7 @@ export class tablaInforme extends LitElement {
                         <td>${item.idMateriaPrima}</td>
                         <td>${item.nombre}</td>
                         <td>${item.fechaDeAdquisicion}</td>
-                        <td>${item.fechaDeVencimiento}</td>
+                        <td>${item.fechaVencimiento}</td>
                         <td>${item.costoUnidad}</td>
                         <td>${item.proveedor}</td>
                         <td>${item.descripcion}</td>
