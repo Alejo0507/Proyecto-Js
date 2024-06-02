@@ -140,6 +140,7 @@ export class tablaInforme extends LitElement {
         const ubicacion = prompt("Ingrese la nueva ubicacion:", elementoAEditar.ubicacion);
         
         
+        
         // Si el usuario cancela el proceso de edición, no se hace nada
         if (nombre === null || fechaAdquisicion === null) {
             return;
