@@ -145,22 +145,22 @@ export class calculadoraEficiencia extends LitElement {
                         <form id="calcForm">
                             <div class="input-container">
                                 <label for="totalProductos">Cantidad total de productos terminados</label>
-                                <input type="number" id="total" name="totalProductos">
+                                <input type="number" id="total" name="totalProductos" required>
                             </div>
 
                             <div class="input-container">
                                 <label for="horasTotProduct">Horas totales de producción</label>
-                                <input type="number" id="horas" name="horasTotProduct">
+                                <input type="number" id="horas" name="horasTotProduct" required>
                             </div>
 
                             <div class="input-container">
                                 <label for="costosOperativosTotales">Costos operativos totales</label>
-                                <input type="number" id="costos" name="costosOperativosTotales">
+                                <input type="number" id="costos" name="costosOperativosTotales" required>
                             </div>
 
                             <div class="input-container">
                                 <label for="productosDefectuosos">Número de productos defectuosos</label>
-                                <input type="number" id="defectos" name="productosDefectuosos">
+                                <input type="number" id="defectos" name="productosDefectuosos" required>
                             </div>
 
                             <input type="submit" id="enviar-form">

@@ -1,5 +1,5 @@
 import './formulas'
-import { calcularEficienciaOperativa, calcularProduccionEfectiva } from './formulas';
+import { calcularEficienciaOperativa, calcularProduccionEfectiva, calcularTasaDefectos } from './formulas';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const formContainer = cRoot.getElementById('form-container');
     const resultContainer = cRoot.getElementById('resultado-container');
     const resultado = cRoot.getElementById('resultado');
-    const SUBMIT = cRoot.getElementById('enviar-form');
 
     
     // Función para aparecer modal al dar click
@@ -37,6 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const prodEfectiva = calcularProduccionEfectiva(productosTotales,prodDefectuosos);
         const eficienciaOp = calcularEficienciaOperativa(prodEfectiva, costosTotales);
+        const tasaDeDefectos = calcularTasaDefectos(prodDefectuosos, productosTotales);
+        console.log(tasaDeDefectos);
 
         formContainer.style.display = "none";
         resultContainer.style.display = "flex";
@@ -47,6 +48,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     })
     
-    
-
 })
+

@@ -6,7 +6,7 @@ export const mandarMockApi = (URL, DATA, form) => {
     fetch(URL, {
         method: 'POST',
         headers: {'content-type':'application/json'},
-        // Send your data in the request body as JSON
+
         body: JSON.stringify(DATA)
       }).then(res => {
         if (res.ok) {
