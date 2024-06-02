@@ -105,13 +105,13 @@ tabla-informe-costo {
   z-index: 1;
 }
 
-#inventario, #produccion, #Costos-indirectos, #calcular-productividad, #calcularManoDeObra, #informeuno, #informedos, #informetres {
+#inventario,#informecuatro, #produccion, #Costos-indirectos, #calcular-productividad, #calcularManoDeObra, #informeuno, #informedos, #informetres {
   border: none;
   color: #ffffff;
   background-color: #8d1ea8;
 
 }
-#inventario:hover, #produccion:hover, #Costos-indirectos:hover, #calcular-productividad:hover, #calcularManoDeObra:hover, #informeuno:hover, #informedos:hover, #informetres:hover {
+#inventario:hover,#informecuatro:hover, #produccion:hover, #Costos-indirectos:hover, #calcular-productividad:hover, #calcularManoDeObra:hover, #informeuno:hover, #informedos:hover, #informetres:hover {
   border: none;
   color: #ffffff;
   background-color: #ae4bc7;
@@ -133,6 +133,7 @@ header {
   height: 250px;
   width: 100vw;
 }
+
 
 #contenedor-principal {
   width: 95vw;
@@ -312,7 +313,7 @@ header {
   #descripcion-costo{
     width: 90%;
   }
-  #inventario, #produccion, #Costos-indirectos, #calcular-productividad, #calcularManoDeObra, #informeuno, #informedos, #informetres {
+  #inventario,#informecuatro, #produccion, #Costos-indirectos, #calcular-productividad, #calcularManoDeObra, #informeuno, #informedos, #informetres {
     margin-top: 10px;
     
   }
