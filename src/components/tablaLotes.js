@@ -85,6 +85,12 @@ export class tablaInformeLote extends LitElement {
     #deleteButton:hover{
         transform: scale(1.1);
     }
+    @media(max-height:800px){
+        #tablaL{
+            height:20rem;
+        }
+    }
+
 
    
     
