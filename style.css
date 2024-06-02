@@ -111,6 +111,12 @@ tabla-informe-costo {
   background-color: #8d1ea8;
 
 }
+#inventario:hover, #produccion:hover, #Costos-indirectos:hover, #calcular-productividad:hover, #calcularManoDeObra:hover, #informeuno:hover, #informedos:hover, #informetres:hover {
+  border: none;
+  color: #ffffff;
+  background-color: #ae4bc7;
+
+}
 
 tabla-informe {
   display: flex;
@@ -309,5 +315,8 @@ header {
   #inventario, #produccion, #Costos-indirectos, #calcular-productividad, #calcularManoDeObra, #informeuno, #informedos, #informetres {
     margin-top: 10px;
     
+  }
+  #contenedor-texto{
+    width: 80%;
   }
 }
