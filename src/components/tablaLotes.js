@@ -74,11 +74,13 @@ export class tablaInformeLote extends LitElement {
 
     }
     #editButton , #deleteButton{
+        border-radius:10px;
         border:none;
         cursor: pointer;
     }
     #editButton:hover{
         transform: scale(1.1);
+        
     }
     #deleteButton:hover{
         transform: scale(1.1);

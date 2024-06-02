@@ -77,9 +77,10 @@ tabla-informe-costo{
 }
 .title{
   color: #ae4bc7;
-  margin-bottom:810px;
+  margin-bottom:780px;
   position: absolute;
   z-index: 1;
+  font-size: 3rem;
 }
 #contenedor-texto{
   text-align: center;

@@ -97,8 +97,38 @@ export class calculadoraManoDeObra extends LitElement {
         justify-content: center;
     }
 
-    #enviar-form {
-        margin-top: 4rem;
+    
+    #enviar-form,#volverACalcular {
+        color:white;
+        font-size:1.2rem;
+        border:none;
+        margin-top: 2rem;
+    }
+    #enviar-form,#volverACalcular{
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #ae4bc7;
+        transition: all 0.5s ease;
+    }
+    #enviar-form:hover,#volverACalcular:hover {
+        color: rgb(141, 30, 168);
+        background-color: #efb7fd;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        cursor: pointer;
+        }
+    #closeModalBtn{
+        transition:0.5s ease;
+        
+    }
+    #closeModalBtn:hover{
+        color:red;
+        
+        transform: scale(1.5);
     }
 
     `
