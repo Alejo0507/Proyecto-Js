@@ -1,14 +1,39 @@
+const URLC = "https://664a2109a300e8795d41126f.mockapi.io/api/1/costosindirectos";
+
 // Función para calcular el salario x hora 
 
 export const calcularSalarioPorHora = (salarioBase, horasTrabajadas) => {
     return (salarioBase / horasTrabajadas);
 }
 
-//Función para sacar beneficios totales
-
-
-
 //Función para sacar costos indirectos totales
+
+export async function calcularCostosIndirectosTotales() {
+    try {
+        const response = await fetch(URLC, {
+            method: 'GET'
+        });
+        if (!response.ok) {
+            throw new Error('Error al obtener los datos de la API');
+        }
+        
+        const data = await response.json();
+
+        // Sumar los valores
+        let suma = 0;
+        for (const item of data) {
+            // Asegurarse de que 'valor' es un número
+            const valor = parseFloat(item.valor);
+            suma += isNaN(valor) ? 0 : valor;
+        }
+        
+        console.log('La suma de todos los valores es:', suma);
+        return suma;
+    } catch (error) {
+        console.error('Error:', error);
+        throw error; 
+    }
+}
 
 
 //Función para sacar beneficios totales

@@ -147,22 +147,22 @@ export class calculadoraManoDeObra extends LitElement {
                         <form id="calcForm">
                             <div class="input-container">
                                 <label for="totalEmpleados">Cantidad de empleados</label>
-                                <input type="number" id="totalEmpleados" name="totalEmpleados">
+                                <input type="number" id="totalEmpleados" name="totalEmpleados" required>
                             </div>
 
                             <div class="input-container">
                                 <label for="salarioBase">Salario base</label>
-                                <input type="number" id="salarioBase" name="salarioBase">
+                                <input type="number" id="salarioBase" name="salarioBase" required>
                             </div>
 
                             <div class="input-container">
                                 <label for="horasTrabajadas">Horas trabajadas</label>
-                                <input type="number" id="horasTrabajadas" name="horasTrabajadas">
+                                <input type="number" id="horasTrabajadas" name="horasTrabajadas" required>
                             </div>
 
                             <div class="input-container">
                                 <label for="beneficios">Beneficios y prestaciones por empleado</label>
-                                <input type="number" id="beneficios" name="beneficios">
+                                <input type="number" id="beneficios" name="beneficios" required>
                             </div>
 
                             <input type="submit" id="enviar-form">
