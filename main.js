@@ -10,7 +10,6 @@ import './src/scripts/productos/registro'
 import './src/scripts/lotes/registro'
 import './src/scripts/lotes/agregarApi'
 import './src/scripts/prendasMokapi'
-import './src/scripts/prendasMokapi'
 import './src/scripts/lotes/gastosMP'
 import './src/scripts/costosIndirectos/agreagarApi'
 
