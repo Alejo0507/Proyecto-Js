@@ -188,18 +188,18 @@ export class tablaInforme extends LitElement {
 
         
                 <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Fecha adquisicion</th>
-                    <th>Fecha vencimiento</th>
-                    <th>Costo unidad</th>
-                    <th>Proveedor</th>
-                    <th>Descripcion</th>
-                    <th>Unidad de medida</th>
-                    <th>Stock</th>
-                    <th>Categoria</th>
-                    <th>Ubicacion</th>
-                    <th>Acciones</th>
+                    <th style="position: sticky; top: 0;">Id</th>
+                    <th style="position: sticky; top: 0;">Nombre</th>
+                    <th style="position: sticky; top: 0;">Fecha adquisicion</th>
+                    <th style="position: sticky; top: 0;">Fecha vencimiento</th>
+                    <th style="position: sticky; top: 0;">Costo unidad</th>
+                    <th style="position: sticky; top: 0;">Proveedor</th>
+                    <th style="position: sticky; top: 0;">Descripcion</th>
+                    <th style="position: sticky; top: 0;">Unidad de medida</th>
+                    <th style="position: sticky; top: 0;">Stock</th>
+                    <th style="position: sticky; top: 0;">Categoria</th>
+                    <th style="position: sticky; top: 0;">Ubicacion</th>
+                    <th style="position: sticky; top: 0;">Acciones</th>
                 </tr>
 
                 ${this.datosAPI.map(item => html`
