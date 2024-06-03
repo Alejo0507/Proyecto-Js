@@ -139,7 +139,17 @@ export class calculadoraManoDeObra extends LitElement {
             flex-direction: column;
             align-items: center;
             height: 100%;
-            font-size: 15px;
+            font-size: 10px;
+        }
+
+        #modalTitle {
+            font-size: 20px;
+        }
+
+        #enviar-form {
+            padding: 5px 7px;
+            border-radius: 4px;
+            margin-top: 4px;
         }
     }
 
@@ -154,7 +164,7 @@ export class calculadoraManoDeObra extends LitElement {
             <div class="modal-content">
                 <span id="closeModalBtn" class="close">&times;</span>
                 <p>
-                    <h1>Calcular costos de mano de obra</h1>
+                    <h1 id="modalTitle">Calcular costos de mano de obra</h1>
                     <div id="form-container">
                         <form id="calcForm">
                             <div class="input-container">
