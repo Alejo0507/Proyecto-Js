@@ -17,30 +17,47 @@
         <a id="opcion" style="text-decoration: none;" href="/calculador.html"><h4 id="cal">Calcular</h4></a>
         <a id="opcion" style="text-decoration: none;" href="/informes.html"><h4 id="inf">Informes</h4></a>
     </div>
-    <div id="cards" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+    <div id="info1" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
         <div class="card text-center mb-3" style="width: 18rem; border: none; background-color: transparent;">
             <div id="tarjeta" class="card-body">
-                <h5 class="card-title  text-light">Special title treatment</h5>
-                <img class="iconos" src="/public/lista-de-deseos.png" alt="blog">
-                <button href="#" id="botones" class="btn btn-primary">Inventario</button>
+                <h5 class="card-title  text-light">Inventario de Materia Prima</h5>
+                <img class="iconos" src="/public/lista-de-quehaceres (5).png" alt="blog">
+                <button id="informeuno" class="btn btn-primary">Inventario</button>
             </div>
         </div>
-        <div class="card text-center mb-3" style="width: 18rem; border: none; background-color: transparent;">
+        <div id="info2" class="card text-center mb-3" style="width: 18rem; border: none; background-color: transparent;">
             <div id="tarjeta" class="card-body">
-                <h5 class="card-title  text-light">Special title treatment</h5>
-                <img class="iconos" src="/public/lista-de-deseos.png" alt="blog">
-                <button href="#" id="botones" class="btn btn-primary">Trabajadores</button>
+                <h5 class="card-title  text-light">Lotes en produccion</h5>
+                <img class="iconos" src="/public/lista-de-quehaceres (6).png" alt="blog">
+                <button href="#" id="informedos" class="btn btn-primary">lotes</button>
             </div>
         </div>
-        <div class="card text-center mb-3" style="width: 18rem; border: none; background-color: transparent;">
+        <div id="info3" class="card text-center mb-3" style="width: 18rem; border: none; background-color: transparent;">
             <div id="tarjeta" class="card-body">
-                <h5 class="card-title  text-light">Special title treatment</h5>
-                <img class="iconos" src="/public/lista-de-deseos.png" alt="blog">
-                <button href="#"  id="botones" class="btn btn-primary">Otros</button>
+                <h5 class="card-title  text-light">Costos indirectos</h5>
+                <img class="iconos" src="/public/lista-de-quehaceres (7).png" alt="blog">
+                <button href="#"  id="informetres" class="btn btn-primary">Costos</button>
+            </div>
+        </div>
+        <div id="info4" class="card text-center mb-3" style="width: 18rem; border: none; background-color: transparent;">
+            <div id="tarjeta" class="card-body">
+                <h5 class="card-title  text-light">Historial de Calculos</h5>
+                <img class="iconos" src="/public/lista-de-quehaceres(9).png" alt="blog">
+                <button href="#"  id="informecuatro" class="btn btn-primary">Historial</button>
             </div>
         </div>
     </div>
-    <script type="module" src="/src/components/informes.js"></script>
-    <script type="module" src="/main.js"></script>
+
+    <tabla-informe></tabla-informe>
+    <tabla-informe-lote></tabla-informe-lote>
+    <tabla-informe-costo></tabla-informe-costo>
+    <tabla-obra></tabla-obra>
+
+
+    <script type="module" src="/src/components/tabla.js"></script>
+    <script type="module" src="/src/components/tablaLotes.js"></script>
+    <script type="module" src="/src/components/tablaCostos.js"></script>
+    <script type="module" src="/src/components/tablaObra.js"></script>
+    <script type="module" src="/src/scripts/mainTablas.js"></script>
 </body>
 </html>

@@ -6,10 +6,25 @@ export class calculadoraEficiencia extends LitElement {
     }
 
     static styles = css`
-    #horas,#costos,#total,#defectos{
+    .input-container{
         border-radius:5px;
         height:25px;
         margin:10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+
+        label {
+            align-self: left;
+            text: left;
+            justify-self: start;
+            width: 370px;
+        }
+
+        input {
+            width: 230px;
+            border-radius: 6px;
+        }
         
     }
    
@@ -31,7 +46,7 @@ export class calculadoraEficiencia extends LitElement {
     .modal-content {
         color:white;
         border-radius:20px;
-    
+       
         background: linear-gradient(
             to bottom right,
             rgb(141, 30, 168),
@@ -62,6 +77,15 @@ export class calculadoraEficiencia extends LitElement {
         text-decoration: none;
         cursor: pointer;
     }
+    #closeModalBtn{
+        transition:0.5s ease;
+        
+    }
+    #closeModalBtn:hover{
+        color:red;
+        
+        transform: scale(1.5);
+    }
 
     #resultado-container {
         display: none;
@@ -81,6 +105,30 @@ export class calculadoraEficiencia extends LitElement {
         text: center;
         justify-content: center;
     }
+
+    #enviar-form,#volverACalcular {
+        color:white;
+        font-size:1.2rem;
+        border:none;
+        margin-top: 2rem;
+    }
+    #enviar-form,#volverACalcular{
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #ae4bc7;
+        transition: all 0.5s ease;
+    }
+    #enviar-form:hover,#volverACalcular:hover {
+        color: rgb(141, 30, 168);
+        background-color: #efb7fd;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        cursor: pointer;
+        }
     `
 
     
@@ -95,24 +143,24 @@ export class calculadoraEficiencia extends LitElement {
                     <h1>Calcular eficiencia operativa</h1>
                     <div id="form-container">
                         <form id="calcForm">
-                            <div class="cantidad-productos-container">
+                            <div class="input-container">
                                 <label for="totalProductos">Cantidad total de productos terminados</label>
-                                <input type="number" id="total" name="totalProductos">
+                                <input type="number" id="total" name="totalProductos" required>
                             </div>
 
-                            <div class="horas-totales-container">
+                            <div class="input-container">
                                 <label for="horasTotProduct">Horas totales de producción</label>
-                                <input type="number" id="horas" name="horasTotProduct">
+                                <input type="number" id="horas" name="horasTotProduct" required>
                             </div>
 
-                            <div class="costos-totales">
+                            <div class="input-container">
                                 <label for="costosOperativosTotales">Costos operativos totales</label>
-                                <input type="number" id="costos" name="costosOperativosTotales">
+                                <input type="number" id="costos" name="costosOperativosTotales" required>
                             </div>
 
-                            <div class="productos-defectuosos">
+                            <div class="input-container">
                                 <label for="productosDefectuosos">Número de productos defectuosos</label>
-                                <input type="number" id="defectos" name="productosDefectuosos">
+                                <input type="number" id="defectos" name="productosDefectuosos" required>
                             </div>
 
                             <input type="submit" id="enviar-form">
