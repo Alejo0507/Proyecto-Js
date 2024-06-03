@@ -84,7 +84,7 @@ export class tablaInforme extends LitElement {
             height:20rem;
         }
     }
-
+    
    
     
     `
@@ -232,7 +232,6 @@ export class tablaInforme extends LitElement {
             
             <table id="tablaMp">
 
-        
                 <tr>
                     <th style="position: sticky; top: 0;">Id</th>
                     <th style="position: sticky; top: 0;">Nombre</th>
