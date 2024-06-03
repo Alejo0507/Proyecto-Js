@@ -1,6 +1,6 @@
 import './formulas'
 import '../../formatearMoneda'
-import { calcularBeneficiosTotales, calcularCostosIndirectosTotales, calcularCostosTotales, calcularSalarioPorHora, calcularSalarioTotal } from './formulas';
+import { calcularBeneficiosTotales, calcularCostosIndirectosTotales, calcularCostosTotales, calcularHorasTotales, calcularSalarioPorHora, calcularSalarioTotal } from './formulas';
 import { pasarAMoneda } from '../../formatearMoneda';
 import { mandarMockApi } from '../../mockapi/mandar';
 import { calcularCostosUnd, calcularTasaDefectos, calcularEficienciaOperativa, calcularProduccionEfectiva } from '../formulas';
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const horas = cRoot.getElementById('horasTrabajadas').value;
         const beneficios = cRoot.getElementById('beneficios').value;
         
-        const prodEfectiva = calcularProduccionEfectiva(productosTotales, costosTotales);
+        const prodEfectiva = calcularProduccionEfectiva(productosTotales, prodDefectuosos);
         const eficienciaOp = calcularEficienciaOperativa(prodEfectiva, costosTotales);
         const tasaDeDefectos = calcularTasaDefectos(prodDefectuosos, productosTotales);
         const costosUnd = calcularCostosUnd(costosTotales,productosTotales);
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const tasaDeDefectos = calcularTasaDefectos(prodDefectuosos,productosTotales)
             
             const costoManoDeObraTotal = calcularCostosTotales(salarioTotal,beneficiosTotales,costosIndirectosTotales);
-
+            const horasTotales = calcularHorasTotales(horas, empleados);
             formContainer.style.display = "none";
             resultContainer.style.display = "flex";
 
