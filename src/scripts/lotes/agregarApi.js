@@ -27,7 +27,7 @@ form.addEventListener('submit', async (event) => {
       throw new Error('Error al obtener el salario de la API');
     }
     const salarioData = await salarioResponse.json();
-    const salarioPorHora = salarioData[0].salarioPorHora; // Suponiendo que el salario está en la primera posición del arreglo
+    const salarioPorHora = salarioData[salarioData.length - 1].salarioPorHora; // Suponiendo que el salario está en la primera posición del arreglo
 
     // Calcular los gastos de materiales para el lote de prendas
     const gastosMaterialesLote = calcularGastosMaterialesLote([producto], cantidad);
