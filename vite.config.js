@@ -1,15 +1,17 @@
+// vite.config.js
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
-import lit from '@vitejs/plugin-lit';
 
 export default defineConfig({
-    plugins: [lit()],
-    build: {
-        rollupOptions: {
-            input: {
-                main: resolve(__dirname, 'index.html'),
-            },
-        },
-    },
+  server: {
+    host: true,  // Esto permite que el servidor escuche en todas las interfaces de red
+    port: 3000   // Puedes cambiar el puerto si es necesario
+  },
+  plugins: [lit()],
+  build: {
+      rollupOptions: {
+          input: {
+              main: resolve(__dirname, 'index.html'),
+          },
+      },
+  },
 });
-
