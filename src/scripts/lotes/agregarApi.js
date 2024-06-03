@@ -11,7 +11,7 @@ form.addEventListener('submit', async (event) => {
 
   const producto = document.getElementById('producto').value;
   const cantidad = document.getElementById('cantidadproductos').value;
-  const baseasignacion=document.getElementById('productomes')
+  const baseasignacion=document.getElementById('productomes').value;
 
   try {
 
@@ -20,7 +20,7 @@ form.addEventListener('submit', async (event) => {
 
     await actualizarMateriaPrimaAPI(gastosMaterialesLote);
 
-    // Mandar el lote de prendas a la API Mock
+    
     mandarMockApi(URLMP, { producto, cantidad,baseasignacion }, form);
   } catch (error) {
     console.error('Error:', error);
