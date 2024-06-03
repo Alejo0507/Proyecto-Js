@@ -253,7 +253,7 @@ export class tablaInforme extends LitElement {
                         <td>${item.idMateriaPrima}</td>
                         <td>${item.nombre}</td>
                         <td>${item.fechaDeAdquisicion}</td>
-                        <td>${item.fechaVencimiento}</td>
+                        <td>${item.fechaDeVencimiento}</td>
                         <td>${item.costoUnidad}</td>
                         <td>${item.proveedor}</td>
                         <td>${item.descripcion}</td>
