@@ -7,7 +7,7 @@ export function calcularGastosMaterialesLote(nombresPrendas, cantidad) {
         const prenda = prendas.find(p => p.nombre === nombre);
         if (prenda) {
             for (const categoria in prenda) {
-                if (categoria !== 'nombre' && categoria !== 'id' && categoria !== 'costo-unidad') {
+                if (categoria !== 'nombre' && categoria !== 'id' && categoria !== 'costo-unidad' && categoria !== 'horas' && categoria !== 'trabajadores') {
                     // Verificar si la categoría ya existe en los gastos totales, si no, inicializarla
                     if (!gastosTotales.hasOwnProperty(categoria)) {
                         gastosTotales[categoria] = 0;
@@ -37,7 +37,7 @@ export function actualizarMateriaPrimaAPI(gastosMaterialesTotales) {
 
             materiaPrima.forEach(item => {
                 for (const categoria in gastosRestantes) {
-                    if (item.categoria.toLowerCase() === categoria && gastosRestantes[categoria] > 0) {
+                    if (categoria !== 'horas' && categoria !== 'trabajadores' && item.categoria.toLowerCase() === categoria && gastosRestantes[categoria] > 0) {
                         const cantidadARestar = Math.min(gastosRestantes[categoria], parseInt(item.cantidad));
                         item.cantidad -= cantidadARestar;
                         gastosRestantes[categoria] -= cantidadARestar;
