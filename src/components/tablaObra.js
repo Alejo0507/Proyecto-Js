@@ -11,13 +11,13 @@ export class tablaManoDeObra extends LitElement {
     static styles = css`
     /* Contenedor de la tabla */
     #tablaO {
-        
+
         display: none; 
         flex-direction: column;
         width: 95%;
         height: 30rem;
         overflow: auto; 
-        justify-self: center;          
+        justify-self: center;         
     }
     
     /* Estilos para tbody y thead */
@@ -26,7 +26,7 @@ export class tablaManoDeObra extends LitElement {
    
     th {
         position: sticky;
-        text-align: left;
+        text-align: center;
         padding: 10px 15px;
         background: linear-gradient(to right bottom, rgb(141, 30, 168), rgb(141, 30, 168));
         color: white;
@@ -34,7 +34,7 @@ export class tablaManoDeObra extends LitElement {
     td{
         
         boder-radius:10px;
-        text-align: left;
+        text-align: center;
         padding: 10px 15px;
         background-color: #efb7fd;
         color: rgb(141, 30, 168);

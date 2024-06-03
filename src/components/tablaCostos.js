@@ -73,6 +73,19 @@ export class tablaInformeCosto extends LitElement {
         display: none; 
 
     }
+    
+    #editButton , #deleteButton{
+        border-radius:10px;
+        border:none;
+        cursor: pointer;
+    }
+    #editButton:hover{
+        transform: scale(1.1);
+        
+    }
+    #deleteButton:hover{
+        transform: scale(1.1);
+    }
     @media(max-height:800px){
         #TablaC{
             height:20rem;
