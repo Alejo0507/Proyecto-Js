@@ -5,14 +5,18 @@ export const prendas =[
             "hilos":50,
             "botones":6,
             "telas":3,
-            "id":"1"
+            "id":"1",
+            "horas":4,
+            "trabajadores":4,
         },
         {
             "nombre":"Camisa manga Corta",
             "hilos":45,
             "botones":6,
             "telas":2,
-            "id":"2"
+            "id":"2",
+            "horas":3,
+            "trabajadores":4,
             },
         {
             "nombre":"Vestido Largo",
@@ -24,7 +28,9 @@ export const prendas =[
             "cauchos":2,
             "encajes":12,
             "costo-unidad":0,
-            "id":"3"
+            "id":"6",
+            "horas":1,
+            "trabajadores":4,
             },
         {
             "nombre":"Vestido Corto",
@@ -36,7 +42,9 @@ export const prendas =[
             "cauchos":2,
             "encajes":8,
             "costo-unidad":0,
-            "id":"4"
+            "id":"4",
+            "horas":5,
+            "trabajadores":4,
             },
         {
             "nombre":"Pantalon de Vestir",
@@ -48,7 +56,9 @@ export const prendas =[
             "cauchos":1,
             
             "costo-unidad":0,
-            "id":"5"
+            "id":"5",
+            "horas":4,
+            "trabajadores":4,
                     },
         {
             "nombre":"Pantalon de Jean",
@@ -60,7 +70,9 @@ export const prendas =[
            
           
             "costo-unidad":0,
-            "id":"6"
+            "id":"6",
+            "horas":3,
+            "trabajadores":4,
                         },
         {
             "nombre":"Short",
@@ -69,7 +81,9 @@ export const prendas =[
             "telas":2,
             "sierres":1,
            
-            "id":"7"
+            "id":"7",
+            "horas":2,
+            "trabajadores":4,
                         },
 ]
 
