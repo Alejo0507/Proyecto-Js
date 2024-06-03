@@ -124,6 +124,11 @@ tabla-informe {
   width: 90%;
   z-index: 2;
 }
+tabla-obra{
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
 
 header {
   z-index: 0;
@@ -287,6 +292,11 @@ header {
     width: 95%;
   }
   tabla-informe-lote {
+    display: flex;
+    justify-content: center;
+    width: 95%;
+  }
+  tabla-obra{
     display: flex;
     justify-content: center;
     width: 95%;
