@@ -321,3 +321,16 @@ header {
     width: 80%;
   }
 }
+
+@media(max-height:800px) and (min-width: 781px){
+  header{
+    margin-top: 100px;
+  }
+  .title{
+    margin-top: 130px;
+  }
+  #inicio{
+    margin-top: 160px;
+  }
+  
+}

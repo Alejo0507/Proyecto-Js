@@ -73,7 +73,13 @@ export class tablaInformeCosto extends LitElement {
         display: none; 
 
     }
+    @media(max-height:800px){
+        #TablaC{
+            height:20rem;
+        }
+    }
 
+   
     
     `
 
