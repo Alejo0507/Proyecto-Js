@@ -139,7 +139,17 @@ export class calculadoraEficiencia extends LitElement {
             flex-direction: column;
             align-items: center;
             height: 100%;
-            font-size: 15px;
+            font-size: 10px;
+        }
+
+        #modalTitle {
+            font-size: 20px;
+        }
+
+        #enviar-form {
+            padding: 5px 7px;
+            border-radius: 4px;
+            margin-top: 4px;
         }
     }
     `
@@ -153,7 +163,7 @@ export class calculadoraEficiencia extends LitElement {
             <div class="modal-content">
                 <span id="closeModalBtn" class="close">&times;</span>
                 <p>
-                    <h1>Calcular eficiencia operativa</h1>
+                    <h1 id="modalTitle">Calcular eficiencia operativa</h1>
                     <div id="form-container">
                         <form id="calcForm">
                             <div class="input-container">
@@ -184,7 +194,6 @@ export class calculadoraEficiencia extends LitElement {
 
                         <h1>Su empresa tiene una eficiencia operativa de:</h1>
                         <p><span id="resultado">0  </span> unidades/$</p>
-                        <button id="volverACalcular">Volver a calcular</button>
                     </div>
                 </p>
             </div>
