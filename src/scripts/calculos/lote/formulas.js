@@ -1,8 +1,23 @@
-// Función para calcular el costo de materia prima por lote
-export const calcularCostoMateriaPorLote = (cantidadMp, costoPorUnidad) => {
-    return (cantidadMp * costoPorUnidad);
-}
-
+import { prendas } from "../../prendasMokapi";
+export const calcularGastosMaterialesLote = (producto, cantidad, costosPorUnidad) => {
+    const prenda = prendas.find(p => p.nombre === producto);
+    if (!prenda) {
+      console.error(`No se encontró la prenda para el producto ${producto}`);
+      return 0;
+    }
+  
+    let gastoTotal = 0;
+    Object.keys(prenda).forEach(material => {
+      if (material !== "nombre" && material !== "id" && material !== "horas" && material !== "trabajadores" && material !== "costo-unidad") {
+        if (costosPorUnidad[material]) {
+          gastoTotal += prenda[material] * cantidad * costosPorUnidad[material];
+        } else {
+          console.error(`No se encontró costo por unidad para ${material}`);
+        }
+      }
+    });
+    return gastoTotal;
+  };
 // Función para calcular la mano de obra por lote 
 export const calcularManoDeObraPorLote = (horasTrabajadas,salarioPorHora) => {
     return (horasTrabajadas * salarioPorHora);
