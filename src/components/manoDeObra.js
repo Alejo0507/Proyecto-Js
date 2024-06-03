@@ -18,12 +18,14 @@ export class calculadoraManoDeObra extends LitElement {
             align-self: left;
             text: left;
             justify-self: start;
-            width: 300px;
+            width: 370px;
         }
 
         input {
             width: 230px;
             border-radius: 6px;
+            align-self: right;
+            justify-self: right;
         }
         
     }
@@ -46,7 +48,7 @@ export class calculadoraManoDeObra extends LitElement {
     .modal-content {
         color:white;
         border-radius:20px;
-    
+       
         background: linear-gradient(
             to bottom right,
             rgb(141, 30, 168),
@@ -77,6 +79,15 @@ export class calculadoraManoDeObra extends LitElement {
         text-decoration: none;
         cursor: pointer;
     }
+    #closeModalBtn{
+        transition:0.5s ease;
+        
+    }
+    #closeModalBtn:hover{
+        color:red;
+        
+        transform: scale(1.5);
+    }
 
     #resultado-container {
         display: none;
@@ -97,7 +108,6 @@ export class calculadoraManoDeObra extends LitElement {
         justify-content: center;
     }
 
-    
     #enviar-form,#volverACalcular {
         color:white;
         font-size:1.2rem;
@@ -121,14 +131,16 @@ export class calculadoraManoDeObra extends LitElement {
         padding-bottom: 20px;
         cursor: pointer;
         }
-    #closeModalBtn{
-        transition:0.5s ease;
-        
-    }
-    #closeModalBtn:hover{
-        color:red;
-        
-        transform: scale(1.5);
+
+    @media screen and (max-width: 1260px) {
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            font-size: 15px;
+        }
     }
 
     `
