@@ -139,7 +139,7 @@ export class calculadoraManoDeObra extends LitElement {
             flex-direction: column;
             align-items: center;
             height: 100%;
-            font-size: 10px;
+            font-size: 15px;
         }
     }
 
