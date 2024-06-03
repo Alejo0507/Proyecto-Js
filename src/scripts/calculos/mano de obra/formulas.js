@@ -50,3 +50,8 @@ export const calcularSalarioTotal = (salarioPorHora, horasTrabajadas, empleados)
 export const calcularCostosTotales = (salarioTotal,beneficiosTotales,costosIndirectos) => {
     return (salarioTotal + beneficiosTotales + costosIndirectos);
 }
+
+// Función para sacar las horas totales trabajadas 
+export const calcularHorasTotales = (horas, empleados) => {
+    return (horas * empleados);
+}
