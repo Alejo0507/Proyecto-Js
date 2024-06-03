@@ -24,6 +24,8 @@ export class calculadoraEficiencia extends LitElement {
         input {
             width: 230px;
             border-radius: 6px;
+            align-self: right;
+            justify-self: right;
         }
         
     }
@@ -129,6 +131,17 @@ export class calculadoraEficiencia extends LitElement {
         padding-bottom: 20px;
         cursor: pointer;
         }
+
+    @media screen and (max-width: 1260px) {
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            font-size: 10px;
+        }
+    }
     `
 
     
