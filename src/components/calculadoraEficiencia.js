@@ -149,10 +149,7 @@ export class calculadoraEficiencia extends LitElement {
 
         #modalTitle {
             font-size: 20px;
-<<<<<<< HEAD
             text-align: center;
-=======
->>>>>>> cc7afe9 (responsive calculadora)
         }
 
         #enviar-form {
