@@ -10,12 +10,25 @@ export default defineConfig({
     open: '/src/pages/index.html',
   },
 
-  build: {
+ build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'src/main.js'), // Ruta de tu archivo main.js que importa y registra los componentes
+        main: resolve(__dirname, 'src/pages/index.html'),
+        registro: resolve(__dirname, 'src/pages/registro.html'),
+        calculador: resolve(__dirname, 'src/pages/calculador.html'),
+        informes: resolve(__dirname, 'src/pages/informes.html'),
+        mainjs: resolve(__dirname, 'src/main.js') // Agrega tu main.js aquí
       }
     }
   }
 });
+
+
+
+
+
+
+
+
+
 
