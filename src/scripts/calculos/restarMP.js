@@ -44,6 +44,7 @@ export async function actualizarMateriaPrimaAPI(gastosMateriales) {
 
             if (cantidadGastada > 0) {
                 alert(`No hay suficiente stock de ${categoria} para la producción.`);
+                break;
             }
 
             if (material) {

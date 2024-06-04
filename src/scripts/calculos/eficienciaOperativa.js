@@ -43,10 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         resultContainer.style.display = "flex";
         
         resultado.textContent = eficienciaOp.toFixed(2);
-        
-
-
     })
-    
 })
 
