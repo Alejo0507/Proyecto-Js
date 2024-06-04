@@ -3,7 +3,8 @@ import { actualizarMateriaPrimaAPI } from '../calculos/restarMP';
 import { prendas } from '../prendasMokapi';
 import { calcularManoDeObraPorLote } from '../calculos/lote/formulas';
 import { calcularGastosMaterialesLote } from '../calculos/lote/formulas';
-
+import { calcularIndirectoPorLote } from '../calculos/lote/formulas';
+import { calcularTasaDeIndirectos } from '../calculos/lote/formulas';
 const URLMP = "https://66586d8e5c36170526486c75.mockapi.io/lotes";
 const URLSalario = "https://665630689f970b3b36c49525.mockapi.io/manoDeObra";
 const URLCostos = "https://665630689f970b3b36c49525.mockapi.io/materiaPrima";
@@ -17,19 +18,22 @@ form.addEventListener('submit', async (event) => {
   const producto = document.getElementById('producto').value;
   const cantidad = parseInt(document.getElementById('cantidadproductos').value); // Convertir a número
   const baseasignacion = document.getElementById('productosmes').value;
+  const  lotesmes = parseInt(document.getElementById('lotesmes').value);
 
   try {
     // Calcular las horas trabajadas para la prenda seleccionada
     let horastrabajadas = calcularHorasTrabajadas(producto, cantidad);
     console.log("Horas Trabajadas:", horastrabajadas);
-
+    const costosidirectoslote =  calcularIndirectoPorLote(cantidad,lotesmes)
     // Obtener el salario desde la API
     const salarioResponse = await fetch(URLSalario);
     if (!salarioResponse.ok) {
       throw new Error('Error al obtener el salario de la API');
     }
+    
     const salarioData = await salarioResponse.json();
     const salarioPorHora = salarioData[salarioData.length - 1].salarioPorHora;
+    const tasaasignacionCI= calcularTasaDeIndirectos(costosidirectoslote,lotesmes)
 
     // Obtener los costos por unidad desde la API
     const costosPorUnidad = await obtenerCostosPorUnidad();
@@ -45,7 +49,7 @@ console.log(costosPorUnidad)
     await actualizarMateriaPrimaAPI(costoMPlote);
 
     // Mandar el lote de prendas a la API Mock
-    mandarMockApi(URLMP, { producto, cantidad, baseasignacion, horastrabajadas, costoMOlote, costoMPlote }, form);
+    mandarMockApi(URLMP, { producto, cantidad, baseasignacion, horastrabajadas, costoMOlote, costoMPlote,costosidirectoslote,tasaasignacionCI }, form);
   } catch (error) {
     console.error('Error:', error);
   }
