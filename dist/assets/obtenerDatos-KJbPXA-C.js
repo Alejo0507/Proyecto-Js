@@ -1,0 +1,1 @@
+async function a(o){try{const r=await fetch(o);if(!r.ok)throw new Error("Error al obtener los datos de la API");return await r.json()}catch(r){throw console.error("Error al obtener los datos:",r),r}}export{a as f};
