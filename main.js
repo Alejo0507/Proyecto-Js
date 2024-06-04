@@ -1,7 +1,7 @@
 import './style.css';
 import './node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './src/scripts/calculos/eficienciaOperativa';
-import './src/scripts/calculos/mano de obra/thisMain';
+import './src/scripts/calculos/manoDeObra/thisMain';
 import './src/scripts/materiaPrima/agregarApi';
 import './src/scripts/materiaPrima/registro';
 import './src/scripts/productos/registro';
