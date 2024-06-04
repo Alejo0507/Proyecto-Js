@@ -22,10 +22,11 @@ form.addEventListener('submit', async (event) => {
   const cantidad = parseInt(document.getElementById('cantidadproductos').value); // Convertir a número
   const baseasignacion = document.getElementById('productosmes').value;
   const costesIndirectosTotales = await calcularCostosIndirectosTotales()
+    
   try {
     // Calcular las horas trabajadas para la prenda seleccionada
     const tasaAsignacion = calcularTasaDeIndirectos(costesIndirectosTotales,baseasignacion);
-    const tasaAsignacionTabla = ("${tasaAsignacion}%")
+    const tasaAsignacionTabla = (tasaAsignacion + "%")
     let horastrabajadas = calcularHorasTrabajadas(producto, cantidad);
     console.log("Horas Trabajadas:", horastrabajadas);
     const costosidirectoslote =  calcularIndirectoPorLote(cantidad,tasaAsignacion)
