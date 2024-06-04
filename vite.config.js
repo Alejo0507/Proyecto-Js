@@ -7,13 +7,13 @@ export default defineConfig({
   server: {
     host: true, 
     port: 3000,
-    open: '/src/pages/index.html',
+    open: 'index.html',
   },
 
  build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'src/pages/index.html'),
+        main: resolve(__dirname, 'index.html'),
         registro: resolve(__dirname, 'src/pages/registro.html'),
         calculador: resolve(__dirname, 'src/pages/calculador.html'),
         informes: resolve(__dirname, 'src/pages/informes.html'),
