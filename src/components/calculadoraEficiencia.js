@@ -34,6 +34,7 @@ export class CalculadoraEficiencia extends HTMLElement {
         const eficiencia = total / (horas * costos * (1 + defectos / total));
         this.shadowRoot.querySelector('#resultado').textContent = eficiencia.toFixed(2);
         this.shadowRoot.querySelector('#resultado-container').style.display = 'flex';
+        this.shadowRoot.querySelector('#modal-content').style.display = "none";
       }
     }
   
