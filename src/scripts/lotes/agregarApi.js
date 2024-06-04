@@ -5,6 +5,8 @@ import { calcularManoDeObraPorLote } from '../calculos/lote/formulas';
 import { calcularGastosMaterialesLote } from '../calculos/lote/formulas';
 import { calcularIndirectoPorLote } from '../calculos/lote/formulas';
 import { calcularTasaDeIndirectos } from '../calculos/lote/formulas';
+import { calcularGastosMaterialesLote1 } from '../calculos/restarMP';
+
 const URLMP = "https://66586d8e5c36170526486c75.mockapi.io/lotes";
 const URLSalario = "https://665630689f970b3b36c49525.mockapi.io/manoDeObra";
 const URLCostos = "https://665630689f970b3b36c49525.mockapi.io/materiaPrima";
@@ -37,16 +39,14 @@ form.addEventListener('submit', async (event) => {
 
     // Obtener los costos por unidad desde la API
     const costosPorUnidad = await obtenerCostosPorUnidad();
-console.log(costosPorUnidad)
+    console.log(costosPorUnidad)
     // Calcular los gastos de materiales para el lote de prendas
     const costoMPlote = calcularGastosMaterialesLote(producto, cantidad, costosPorUnidad);
+    const costoMPlote1 = calcularGastosMaterialesLote1(producto,cantidad);
     console.log("Gastos Materiales Lote:", costoMPlote);
-
-    // Calcular el costo de la mano de obra por lote
     const costoMOlote = calcularManoDeObraPorLote(horastrabajadas, salarioPorHora);
-
     // Actualizar los datos de materia prima en la API Mock
-    await actualizarMateriaPrimaAPI(costoMPlote);
+    await actualizarMateriaPrimaAPI(costoMPlote1);
 
     // Mandar el lote de prendas a la API Mock
     mandarMockApi(URLMP, { producto, cantidad, baseasignacion, horastrabajadas, costoMOlote, costoMPlote,costosidirectoslote,tasaasignacionCI }, form);
@@ -54,6 +54,7 @@ console.log(costosPorUnidad)
     console.error('Error:', error);
   }
 });
+
 async function obtenerCostosPorUnidad() {
   try {
     const response = await fetch(URLCostos);
@@ -82,7 +83,6 @@ async function obtenerCostosPorUnidad() {
     throw error;
   }
 }
-
 
 function calcularHorasTrabajadas(producto, cantidad) {
   const prenda = prendas.find(p => p.nombre === producto);
