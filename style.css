@@ -2,15 +2,17 @@
 
 * {
   font-family: "Aclonica", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
-
 html, body {
   height: 100%;
   margin: 0;
 }
+
+#informes-page-container, #registro-page-container, #calculadora-page-container {
+  display: none;
+}
+
+
 
 body {
   position: relative;
@@ -56,7 +58,7 @@ tabla-informe-costo {
   align-items: center;
 }
 
-#inicio {
+.inicio {
   color: #ae4bc7;
   font-size: 1.5rem;
   text-decoration: none;
@@ -196,13 +198,13 @@ header {
   color: #ae4bc7;
 }
 
-#opcion {
+.opcion {
   background-color: #ae4bc7;
   margin: 2%;
   transition: all 0.5s ease;
 }
 
-#opcion:hover {
+.opcion:hover {
   color: rgba(19, 19, 19, 1);
   background-color: #efb7fd;
   padding: 20px 50px;
@@ -229,7 +231,7 @@ header {
     justify-content: flex-start;
   }
 
-  #inicio {
+  .inicio {
     color: #ffffff;
     margin-top: 115px;
     margin-right: 0;
@@ -277,7 +279,7 @@ header {
     align-items: center;
   }
 
-  #opcion {
+  .opcion {
     width: 80%;
     margin: 10px 0;
   }
