@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/dist/women.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULAR</title>
+  <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
+  <script type="module" crossorigin src="/assets/mainjs-BLH2by9B.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/mainjs-BOl_fZQp.css">
+</head>
+<body style="background-image: url(/assets/tienda-ropa-tienda-ropa-perchas-tienda-boutique-moderna_1150-8886-CuMG8w2q.avif);">
+    <h1 class="title">CONFECCIONES PEPITA</h1>
+    <a id="inicio" href="./index.html">Inicio</a>
+    <header style="background-image: url('/public/CONFECCIONES\ PEPITA.png');"></header>
+    <div class="menu-opciones">
+        <a id="opcion" style="text-decoration: none;" href="./registro.html"><h4 id="reg">Registro</h4></a>
+        <a id="opcion" style="text-decoration: none;" href="./calculador.html"><h4 id="cal">Calcular</h4></a>
+        <a id="opcion" style="text-decoration: none;" href="./informes.html"><h4 id="inf">Informes</h4></a>
+    </div>
+    <div id="cards">
+        <div class="card text-center mb-3" style="width: 18rem; border:none; background-color: transparent;">
+            <div id="tarjeta" class="card-body">
+                <h5 class="card-title  text-light" >Calcular eficiencia operativa</h5>
+                <img class="iconos" src="/assets/lista-de-quehaceres(3)-DHJ1-rCX.png" alt="blog">
+                <button href="#" id="calcular-productividad" class="calcular-boton btn btn-primary">Calcular</button>
+            </div>
+        </div>
+        <div class="card text-center mb-3" style="width: 18rem; border:none; background-color: transparent;">
+            <div id="tarjeta" class="card-body">
+                <h5 class="card-title  text-light" >Calcular costos de mano de obra</h5>
+                <img class="iconos" src="/assets/lista-de-quehaceres(4)-Bd5tXxoA.png" alt="blog">
+                <button id="calcularManoDeObra" class="btn btn-primary">Calcular</button>
+            </div>
+        </div>
+    </div>
+
+    <calc-eficiencia></calc-eficiencia>
+    <calc-obra></calc-obra>
+</body>
+</html>

@@ -17,7 +17,13 @@ export default defineConfig({
         registro: resolve(__dirname, 'src/pages/registro.html'),
         calculador: resolve(__dirname, 'src/pages/calculador.html'),
         informes: resolve(__dirname, 'src/pages/informes.html'),
-        mainjs: resolve(__dirname, 'src/main.js') // Agrega tu main.js aquí
+        mainjs: resolve(__dirname, 'src/main.js'),
+        calcef: resolve(__dirname, 'src/components/calculadoraEficiencia.js'),
+        manoobra: resolve(__dirname, 'src/components/manoDeObra.js'),
+        tabla: resolve(__dirname, 'src/components/tabla.js'),
+        tablacostos: resolve(__dirname, 'src/components/tablaCostos.js'),
+        tablalotes: resolve(__dirname, 'src/components/tablaLotes.js'),
+        tablaobra: resolve(__dirname, 'src/components/tablaObra.js'),
       }
     }
   }
