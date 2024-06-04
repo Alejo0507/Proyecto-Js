@@ -24,6 +24,7 @@ export default defineConfig({
         tablacostos: resolve(__dirname, 'src/components/tablaCostos.js'),
         tablalotes: resolve(__dirname, 'src/components/tablaLotes.js'),
         tablaobra: resolve(__dirname, 'src/components/tablaObra.js'),
+        maintablas: resolve(__dirname, 'src/scripts/mainTablas.js'),
       }
     }
   }
