@@ -9,7 +9,7 @@ export class tablaManoDeObra extends LitElement {
         this.datosAPI = []; 
     }
     static styles = css`
-    /* Contenedor de la tabla */
+
     #tablaO {
 
         display: none; 

@@ -6,7 +6,8 @@ import { calcularGastosMaterialesLote } from '../calculos/lote/formulas';
 import { calcularIndirectoPorLote } from '../calculos/lote/formulas';
 import { calcularTasaDeIndirectos } from '../calculos/lote/formulas';
 import { calcularGastosMaterialesLote1 } from '../calculos/restarMP';
-
+import '../calculos/manoDeObra/formulas'
+import { calcularCostosIndirectosTotales } from '../calculos/manoDeObra/formulas';
 const URLMP = "https://66586d8e5c36170526486c75.mockapi.io/lotes";
 const URLSalario = "https://665630689f970b3b36c49525.mockapi.io/manoDeObra";
 const URLCostos = "https://665630689f970b3b36c49525.mockapi.io/materiaPrima";
@@ -20,13 +21,14 @@ form.addEventListener('submit', async (event) => {
   const producto = document.getElementById('producto').value;
   const cantidad = parseInt(document.getElementById('cantidadproductos').value); // Convertir a número
   const baseasignacion = document.getElementById('productosmes').value;
-  const  lotesmes = parseInt(document.getElementById('lotesmes').value);
-
+  const costesIndirectosTotales = await calcularCostosIndirectosTotales()
   try {
     // Calcular las horas trabajadas para la prenda seleccionada
+    const tasaAsignacion = calcularTasaDeIndirectos(costesIndirectosTotales,baseasignacion);
+    const tasaAsignacionTabla = ("${tasaAsignacion}%")
     let horastrabajadas = calcularHorasTrabajadas(producto, cantidad);
     console.log("Horas Trabajadas:", horastrabajadas);
-    const costosidirectoslote =  calcularIndirectoPorLote(cantidad,lotesmes)
+    const costosidirectoslote =  calcularIndirectoPorLote(cantidad,tasaAsignacion)
     // Obtener el salario desde la API
     const salarioResponse = await fetch(URLSalario);
     if (!salarioResponse.ok) {
@@ -35,7 +37,6 @@ form.addEventListener('submit', async (event) => {
     
     const salarioData = await salarioResponse.json();
     const salarioPorHora = salarioData[salarioData.length - 1].salarioPorHora;
-    const tasaasignacionCI= calcularTasaDeIndirectos(costosidirectoslote,lotesmes)
 
     // Obtener los costos por unidad desde la API
     const costosPorUnidad = await obtenerCostosPorUnidad();
@@ -49,7 +50,7 @@ form.addEventListener('submit', async (event) => {
     await actualizarMateriaPrimaAPI(costoMPlote1);
 
     // Mandar el lote de prendas a la API Mock
-    mandarMockApi(URLMP, { producto, cantidad, baseasignacion, horastrabajadas, costoMOlote, costoMPlote,costosidirectoslote,tasaasignacionCI }, form);
+    mandarMockApi(URLMP, { producto, cantidad, baseasignacion, horastrabajadas, costoMOlote, costoMPlote,tasaAsignacionTabla,costosidirectoslote }, form);
   } catch (error) {
     console.error('Error:', error);
   }
