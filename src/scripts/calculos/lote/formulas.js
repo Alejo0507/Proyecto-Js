@@ -25,7 +25,7 @@ export const calcularManoDeObraPorLote = (horasTrabajadas,salarioPorHora) => {
 
 // Función para calcular tasa de asignación de costos indirectos
 export const calcularTasaDeIndirectos = (indirectosTotales, baseDeAsignacion) => {
-    return ((indirectosTotales / baseDeAsignacion)+"%");
+    return ((indirectosTotales / baseDeAsignacion));
 }
 
 // Función para calcular el costo indirecto total asignado al lote

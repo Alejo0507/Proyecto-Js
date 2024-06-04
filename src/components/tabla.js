@@ -91,13 +91,13 @@ export class tablaInforme extends LitElement {
 
     connectedCallback() {
         super.connectedCallback();
-        this.fetchDataFromAPI(); // Llama a la función para obtener los datos de la API
+        this.fetchDataFromAPI(); 
     }
 
     async fetchDataFromAPI() {
         try {
-            this.datosAPI = await fetchData(URLMP); // Llama a fetchData y pasa la URL como argumento
-            this.requestUpdate(); // Actualiza el componente para renderizar las filas
+            this.datosAPI = await fetchData(URLMP); 
+            this.requestUpdate(); 
         } catch (error) {
             console.error('Error al obtener los datos:', error);
         }
@@ -124,7 +124,7 @@ export class tablaInforme extends LitElement {
             console.error('Error al eliminar el elemento del mock API:', error);
 
             this.datosAPI = datosAPIBackup;
-            this.requestUpdate(); // Actualizar la tabla para restaurar los datos
+            this.requestUpdate(); 
         });
     }
 
@@ -133,11 +133,11 @@ export class tablaInforme extends LitElement {
         const elementoAEditar = this.datosAPI.find(item => item.id === id);
         
         const nombre = prompt("Ingrese el nuevo nombre:", elementoAEditar.nombre);
-        // Validación de que el prompt reciba una fecha valida
+   
         let fechaAdquisicion;
         while (true) {
             fechaAdquisicion = prompt("Ingrese la nueva fecha de adquisicion (YYYY-MM-DD):", elementoAEditar.fechaDeAdquisicion);
-            if (fechaAdquisicion !== null && !isNaN(Date.parse(fechaAdquisicion))) { // Si le fecha ingresada es valida
+            if (fechaAdquisicion !== null && !isNaN(Date.parse(fechaAdquisicion))) { 
                 fechaAdquisicion = new Date(fechaAdquisicion).toISOString().split('T')[0]; 
                 break;
             } else {
@@ -147,7 +147,7 @@ export class tablaInforme extends LitElement {
 
         let fechaVencimiento;
         while (true) {
-            fechaVencimiento = prompt("Ingrese la nueva fecha de vencimiento (YYYY-MM-DD):", elementoAEditar.fechaVencimiento);
+            fechaVencimiento = prompt("Ingrese la nueva fecha de vencimiento (YYYY-MM-DD):", elementoAEditar.fechaDeVencimiento);
             if (fechaVencimiento !== null && !isNaN(Date.parse(fechaVencimiento))) {
                 fechaVencimiento = new Date(fechaVencimiento).toISOString().split('T')[0];
                 break;
@@ -195,7 +195,7 @@ export class tablaInforme extends LitElement {
         // Actualiza los datos del elemento
         elementoAEditar.nombre = nombre;
         elementoAEditar.fechaDeAdquisicion = fechaAdquisicion;
-        elementoAEditar.fechaVencimiento = fechaVencimiento;
+        elementoAEditar.fechaDeVencimiento = fechaVencimiento;
         elementoAEditar.costoUnidad = costoUnidad;
         elementoAEditar.proveedor = proveedor;
         elementoAEditar.descripcion = descripcion;
@@ -206,7 +206,7 @@ export class tablaInforme extends LitElement {
 
        
         
-        // Envía una solicitud PUT al servidor para actualizar el elemento
+
         fetch(`${URLMP}/${id}`, {
             method: 'PUT',
             headers: {
@@ -218,12 +218,12 @@ export class tablaInforme extends LitElement {
             if (!response.ok) {
                 throw new Error('No se pudo actualizar el elemento en el mock API');
             }
-            // Si la respuesta es exitosa, actualiza la tabla o la vista para reflejar los cambios
-            this.fetchDataFromAPI(); // Vuelve a obtener los datos del API para refrescar la tabla
+ 
+            this.fetchDataFromAPI(); 
         })
         .catch(error => {
             console.error('Error al actualizar el elemento en el mock API:', error);
-            // Manejar el error según sea necesario
+
         });
     }
 

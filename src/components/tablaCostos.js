@@ -168,7 +168,7 @@ export class tablaInformeCosto extends LitElement {
 
        
         
-        // Envía una solicitud PUT al servidor para actualizar el elemento
+
         fetch(`${URLC}/${id}`, {
             method: 'PUT',
             headers: {
@@ -206,9 +206,7 @@ export class tablaInformeCosto extends LitElement {
                     <th  style="position: sticky; top: 0;">Acciones</th>
                 </tr>
 
-                <!-- Cuerpo de la tabla -->
 
-                <!-- Renderiza las filas basadas en los datos de la API -->
                 ${this.datosAPI.map(item => html`
                     <tr>
                         <td style="z-index:3; ">${item.id}</td>
