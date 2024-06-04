@@ -130,7 +130,7 @@ export class calculadoraManoDeObra extends LitElement {
         padding-top: 20px;
         padding-bottom: 20px;
         cursor: pointer;
-        }
+    }
 
     @media screen and (max-width: 1260px) {
 
@@ -138,12 +138,14 @@ export class calculadoraManoDeObra extends LitElement {
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: center;
             height: 100%;
             font-size: 10px;
         }
 
         #modalTitle {
             font-size: 20px;
+            text-align: center;
         }
 
         #enviar-form {
@@ -152,7 +154,6 @@ export class calculadoraManoDeObra extends LitElement {
             margin-top: 4px;
         }
     }
-
     `
 
     

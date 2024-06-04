@@ -24,7 +24,6 @@
                 <img class="iconos" src="/public/lista-de-quehaceres(3).png" alt="blog">
                 <button href="#" id="calcular-productividad" class="calcular-boton btn btn-primary">Calcular</button>
             </div>
-            <calc-eficiencia></calc-eficiencia>
         </div>
         <div class="card text-center mb-3" style="width: 18rem; border:none; background-color: transparent;">
             <div id="tarjeta" class="card-body">
@@ -32,9 +31,13 @@
                 <img class="iconos" src="/public/lista-de-quehaceres(4).png" alt="blog">
                 <button id="calcularManoDeObra" class="btn btn-primary">Calcular</button>
             </div>
-            <calc-obra></calc-obra>
         </div>
     </div>
+
+    <calc-eficiencia></calc-eficiencia>
+    <calc-obra></calc-obra>
+    <script type="module" src="./src/components/calculadoraEficiencia.js"></script>
+    <script type="module" src="./src/components/manoDeObra.js"></script>
     <script type="module" src="/main.js"></script>
 </body>
 </html>
