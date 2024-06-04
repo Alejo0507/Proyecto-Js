@@ -19,8 +19,6 @@ export class tablaManoDeObra extends LitElement {
         overflow: auto; 
         justify-self: center;         
     }
-    
-    /* Estilos para tbody y thead */
    
 
    
