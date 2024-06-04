@@ -7,6 +7,7 @@ const form = document.getElementById('mpForm');
 
 form.addEventListener('submit', (event) => {
   event.preventDefault()
+  const stock = document.getElementById('cantidad').value
   let materiaPrima = {
       "idMateriaPrima": document.getElementById('idMp').value,
       "nombre": document.getElementById('nombre').value,
@@ -16,7 +17,7 @@ form.addEventListener('submit', (event) => {
       "proveedor": document.getElementById('proveedor').value,
       "descripcion": document.getElementById('descripcion').value,
       "unidadMedida": document.getElementById('unidadMedida').value,
-      "cantidad": document.getElementById('cantidad').value,
+      "cantidad": parseInt(stock),
       "categoria": document.getElementById('categoria').value,
       "ubicacion": document.getElementById('ubicacion').value,
   };

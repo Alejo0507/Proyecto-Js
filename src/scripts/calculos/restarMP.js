@@ -1,100 +1,60 @@
 import { prendas } from "../prendasMokapi";
+const URLMP = "https://665630689f970b3b36c49525.mockapi.io/materiaPrima";
 
-export function calcularGastosMaterialesLote(nombresPrendas, cantidad) {
-    let gastosTotales = {};
+// Función para calcular los gastos de materiales
+export function calcularGastosMaterialesLote1(nombreProducto, cantidad) {
+    const producto = prendas.find(p => p.nombre === nombreProducto);
+    if (!producto) {
+        throw new Error(`Producto "${nombreProducto}" no encontrado.`);
+    }
 
-    nombresPrendas.forEach(nombre => {
-        const prenda = prendas.find(p => p.nombre === nombre);
-        if (prenda) {
-            for (const categoria in prenda) {
-                if (categoria !== 'nombre' && categoria !== 'id' && categoria !== 'costo-unidad' && categoria !== 'horas' && categoria !== 'trabajadores') {
-                    // Verificar si la categoría ya existe en los gastos totales, si no, inicializarla
-                    if (!gastosTotales.hasOwnProperty(categoria)) {
-                        gastosTotales[categoria] = 0;
-                    }
-                    // Sumar el gasto de la categoría por la cantidad de prendas
-                    gastosTotales[categoria] += prenda[categoria] * cantidad;
-                }
-            }
+    const gastosTotales = {};
+    for (const material in producto) {
+        if (material !== 'nombre' && material !== 'id' && material !== 'costo-unidad' && material !== 'horas' && material !== 'trabajadores') {
+            // Aquí, material es la categoría
+            gastosTotales[material] = producto[material] * cantidad;
         }
-    });
-
+    }
+    console.log(gastosTotales);
     return gastosTotales;
 }
 
-export function actualizarMateriaPrimaAPI(gastosMaterialesTotales) {
-    return fetch('https://665630689f970b3b36c49525.mockapi.io/materiaPrima')
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error('Error al obtener los datos de materia prima de la API');
-            }
-        })
-        .then(materiaPrima => {
-            let gastosRestantes = { ...gastosMaterialesTotales };
-            let materialFaltante = null;
 
-            materiaPrima.forEach(item => {
-                for (const categoria in gastosRestantes) {
-                    if (categoria !== 'horas' && categoria !== 'trabajadores' && item.categoria.toLowerCase() === categoria && gastosRestantes[categoria] > 0) {
-                        const cantidadARestar = Math.min(gastosRestantes[categoria], parseInt(item.cantidad));
-                        item.cantidad -= cantidadARestar;
-                        gastosRestantes[categoria] -= cantidadARestar;
 
-                        if (gastosRestantes[categoria] === 0) {
-                            delete gastosRestantes[categoria];
-                        }
-                        break;
-                    }
-                }
-            });
+export async function actualizarMateriaPrimaAPI(gastosMateriales) {
+    try {
+        // Obtener los datos actuales de la API de materia prima
+        const response = await fetch(URLMP);
+        if (!response.ok) {
+            throw new Error('Error al obtener los datos de la API de materia prima');
+        }
+        let materiaPrima = await response.json();
 
-            // Verificar si hay algún material con stock insuficiente
-            for (const categoria in gastosRestantes) {
-                materialFaltante = categoria;
-                break; // Detener después de encontrar un material con stock insuficiente
-            }
-
-            // Si hay material con stock insuficiente, mostrar un mensaje y detener la ejecución
-            if (materialFaltante) {
-                alert(`No hay suficiente stock de ${materialFaltante} para la producción.`);
-                return Promise.reject(new Error(`Stock insuficiente de ${materialFaltante}`)); // Rechazar la promesa si hay stock insuficiente
-            }
-
-            // Si no hay stock insuficiente, preparar las promesas para actualizar el inventario
-            const updatePromises = materiaPrima.map(item => {
-                const data = JSON.stringify(item);
-                console.log('Datos a enviar en PUT:', data);
-
-                return fetch(`https://665630689f970b3b36c49525.mockapi.io/materiaPrima/${item.id}`, {
+        // Actualizar los datos de materia prima con los gastos de materiales
+        for (const categoria in gastosMateriales) {
+            const cantidadGastada = gastosMateriales[categoria];
+            // Buscar el elemento correspondiente en los datos de materia prima
+            const material = materiaPrima.find(item => item.categoria === categoria);
+            if (material) {
+                // Restar la cantidad gastada del stock actual
+                material.cantidad -= cantidadGastada;
+                // Actualizar el elemento en la API
+                await fetch(`${URLMP}/${material.idMateriaPrima}`, { // Corrección aquí
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: data
-                })
-                .then(response => {
-                    if (response.ok) {
-                        console.log(`Datos de materia prima con id ${item.id} actualizados correctamente`);
-                    } else {
-                        return response.json().then(errorData => {
-                            console.error(`Error al actualizar los datos de materia prima con id ${item.id}:`, errorData);
-                            throw new Error(`Error al actualizar los datos de materia prima con id ${item.id}`);
-                        });
-                    }
-                })
-                .catch(error => {
-                    console.error('Ocurrió un error:', error);
-                    throw error;
+                    body: JSON.stringify(material)
                 });
-            });
+            } else {
+                console.error(`No se encontró la categoría "${categoria}" en los datos de materia prima.`);
+            }
+        }
 
-            // Esperar a que todas las promesas de actualización se completen antes de continuar
-            return Promise.all(updatePromises);
-        })
-        .catch(error => {
-            console.error('Ocurrió un error:', error);
-            return Promise.reject(error);
-        });
+        console.log('Datos de materia prima actualizados correctamente.');
+        return true;
+    } catch (error) {
+        console.error('Error al actualizar la API de materia prima:', error.message);
+        return false;
+    }
 }
