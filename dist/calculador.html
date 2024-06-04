@@ -5,8 +5,10 @@
     <link rel="icon" type="image/svg+xml" href="/dist/women.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CALCULAR</title>
-  <script type="module" crossorigin src="/assets/boostrap-7eaMPqHh.js"></script>
-  <script type="module" crossorigin src="/assets/main-B8voQxrC.js"></script>
+  <script type="module" crossorigin src="/assets/calculador-DzbcXSc3.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/boostrap-7eaMPqHh.js">
+  <link rel="modulepreload" crossorigin href="/assets/lit-element-vPvpt891.js">
+  <link rel="modulepreload" crossorigin href="/assets/main-B8voQxrC.js">
   <link rel="stylesheet" crossorigin href="/assets/boostrap-BOl_fZQp.css">
   <link rel="stylesheet" crossorigin href="/assets/main-DUEfxN0n.css">
 </head>
@@ -26,7 +28,6 @@
                 <img class="iconos" src="/assets/lista-de-quehaceres(3)-DHJ1-rCX.png" alt="blog">
                 <button href="#" id="calcular-productividad" class="calcular-boton btn btn-primary">Calcular</button>
             </div>
-            <calc-eficiencia></calc-eficiencia>
         </div>
         <div class="card text-center mb-3" style="width: 18rem; border:none; background-color: transparent;">
             <div id="tarjeta" class="card-body">
@@ -34,8 +35,10 @@
                 <img class="iconos" src="/assets/lista-de-quehaceres(4)-Bd5tXxoA.png" alt="blog">
                 <button id="calcularManoDeObra" class="btn btn-primary">Calcular</button>
             </div>
-            <calc-obra></calc-obra>
         </div>
     </div>
+
+    <calc-eficiencia></calc-eficiencia>
+    <calc-obra></calc-obra>
 </body>
 </html>
