@@ -1,5 +1,6 @@
 import { prendas } from "../prendasMokapi";
 
+
 export function calcularGastosMaterialesLote(nombresPrendas, cantidad) {
     let gastosTotales = {};
 
@@ -18,11 +19,9 @@ export function calcularGastosMaterialesLote(nombresPrendas, cantidad) {
             }
         }
     });
-
+|
     return gastosTotales;
-}
-
-export function actualizarMateriaPrimaAPI(gastosMaterialesTotales) {
+}export  async function actualizarMateriaPrimaAPI(gastosMaterialesTotales) {
     return fetch('https://665630689f970b3b36c49525.mockapi.io/materiaPrima')
         .then(response => {
             if (response.ok) {
@@ -32,41 +31,20 @@ export function actualizarMateriaPrimaAPI(gastosMaterialesTotales) {
             }
         })
         .then(materiaPrima => {
-            let gastosRestantes = { ...gastosMaterialesTotales };
-            let materialFaltante = null;
-
+            // Restar los gastos de materiales del inventario
             materiaPrima.forEach(item => {
-                for (const categoria in gastosRestantes) {
-                    if (categoria !== 'horas' && categoria !== 'trabajadores' && item.categoria.toLowerCase() === categoria && gastosRestantes[categoria] > 0) {
-                        const cantidadARestar = Math.min(gastosRestantes[categoria], parseInt(item.cantidad));
+                for (const categoria in gastosMaterialesTotales) {
+                    if (categoria !== 'horas' && categoria !== 'trabajadores' && item.categoria.toLowerCase() === categoria) {
+                        const cantidadARestar = Math.min(gastosMaterialesTotales[categoria], parseInt(item.cantidad));
                         item.cantidad -= cantidadARestar;
-                        gastosRestantes[categoria] -= cantidadARestar;
-
-                        if (gastosRestantes[categoria] === 0) {
-                            delete gastosRestantes[categoria];
-                        }
-                        break;
+                        gastosMaterialesTotales[categoria] -= cantidadARestar;
                     }
                 }
             });
 
-            // Verificar si hay algún material con stock insuficiente
-            for (const categoria in gastosRestantes) {
-                materialFaltante = categoria;
-                break; // Detener después de encontrar un material con stock insuficiente
-            }
-
-            // Si hay material con stock insuficiente, mostrar un mensaje y detener la ejecución
-            if (materialFaltante) {
-                alert(`No hay suficiente stock de ${materialFaltante} para la producción.`);
-                return Promise.reject(new Error(`Stock insuficiente de ${materialFaltante}`)); // Rechazar la promesa si hay stock insuficiente
-            }
-
-            // Si no hay stock insuficiente, preparar las promesas para actualizar el inventario
+            // Preparar las promesas para actualizar el inventario
             const updatePromises = materiaPrima.map(item => {
                 const data = JSON.stringify(item);
-                console.log('Datos a enviar en PUT:', data);
-
                 return fetch(`https://665630689f970b3b36c49525.mockapi.io/materiaPrima/${item.id}`, {
                     method: 'PUT',
                     headers: {
