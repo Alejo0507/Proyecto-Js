@@ -1,5 +1,7 @@
 import { LitElement, html, css } from "lit";
+//terminado
 
+//Componente de modal para calcular eficiencia operativa
 export class calculadoraEficiencia extends LitElement {
     constructor() {
         super();

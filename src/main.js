@@ -15,8 +15,9 @@ import './components/tabla';
 import './components/tablaCostos';
 import './components/tablaLotes';
 import './components/tablaObra';
+import './scripts/costosIndirectos/agreagarApi'
 
 
-
+// Terminado
 
 

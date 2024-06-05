@@ -1,5 +1,5 @@
 import { LitElement, html, css } from "lit";
-
+//terminado
 export class calculadoraManoDeObra extends LitElement {
     constructor() {
         super();

@@ -1,4 +1,4 @@
-
+// Terminado
 export const prendas =[
         {
             "nombre":"Camisa manga Larga",

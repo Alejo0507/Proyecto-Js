@@ -11,3 +11,5 @@ export async function fetchData(URL) {
         throw error;
     }
 }
+
+// Terminado

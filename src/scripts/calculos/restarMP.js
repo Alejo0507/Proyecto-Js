@@ -1,6 +1,6 @@
 import { prendas } from "../prendasMokapi";
 const URLMP = "https://665630689f970b3b36c49525.mockapi.io/materiaPrima";
-
+// Terminado
 export function calcularGastosMaterialesLote1(nombreProducto, cantidad) {
     const producto = prendas.find(p => p.nombre === nombreProducto);
     if (!producto) {

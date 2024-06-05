@@ -2,7 +2,7 @@ import { LitElement, html, css } from "lit";
 import { fetchData } from "../scripts/mockapi/obtenerDatos";
 import '../scripts/mockapi/obtenerDatos';
 const URLC = "https://664a2109a300e8795d41126f.mockapi.io/api/1/costosindirectos";
-
+//terminado
 export class tablaInformeCosto extends LitElement {
     constructor() {
         super();

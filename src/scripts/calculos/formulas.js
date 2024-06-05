@@ -23,3 +23,5 @@ export const calcularProduccionEfectiva = (cantidadTotalProductos, defectos) => 
 export const calcularEficienciaOperativa = (prodEfectiva, costosTotales) => {
     return (prodEfectiva / costosTotales);
 }
+
+// Terminado

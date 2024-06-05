@@ -2,7 +2,7 @@ import { LitElement, html, css } from "lit";
 import { fetchData } from "../scripts/mockapi/obtenerDatos";
 import '../scripts/mockapi/obtenerDatos';
 const URLO = "https://665630689f970b3b36c49525.mockapi.io/manoDeObra"
-
+//terminado
 export class tablaManoDeObra extends LitElement {
     constructor() {
         super();

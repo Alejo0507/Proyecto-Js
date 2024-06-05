@@ -32,3 +32,5 @@ export const calcularTasaDeIndirectos = (indirectosTotales, baseDeAsignacion) =>
 export const calcularIndirectoPorLote = (unidadesDelLote,tasaAsignacion) => {
     return (unidadesDelLote * tasaAsignacion)
 }
+
+// Terminado

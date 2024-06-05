@@ -1,6 +1,6 @@
 import '../mockapi/mandar'
 import { mandarMockApi } from '../mockapi/mandar';
-
+// Terminado
 const URLMP = "https://664a2109a300e8795d41126f.mockapi.io/api/1/costosindirectos";
 
 const form = document.getElementById('costoForm');

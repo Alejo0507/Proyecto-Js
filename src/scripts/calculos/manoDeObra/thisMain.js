@@ -4,7 +4,7 @@ import { calcularBeneficiosTotales, calcularCostosIndirectosTotales, calcularCos
 import { pasarAMoneda } from '../../formatearMoneda';
 import { mandarMockApi } from '../../mockapi/mandar';
 import { calcularCostosUnd, calcularTasaDefectos, calcularEficienciaOperativa, calcularProduccionEfectiva } from '../formulas';
-
+// Terminado
 
 let productosTotales, horasTotales, costosTotales, prodDefectuosos;
 const URLO = "https://665630689f970b3b36c49525.mockapi.io/manoDeObra"

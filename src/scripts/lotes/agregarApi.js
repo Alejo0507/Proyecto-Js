@@ -11,7 +11,7 @@ import { calcularCostosIndirectosTotales } from '../calculos/manoDeObra/formulas
 const URLMP = "https://66586d8e5c36170526486c75.mockapi.io/lotes";
 const URLSalario = "https://665630689f970b3b36c49525.mockapi.io/manoDeObra";
 const URLCostos = "https://665630689f970b3b36c49525.mockapi.io/materiaPrima";
-
+// Terminado
 const form = document.getElementById('productForm');
 
 form.addEventListener('submit', async (event) => {

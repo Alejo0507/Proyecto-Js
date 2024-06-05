@@ -1,6 +1,6 @@
 import '../mockapi/mandar'
 import { mandarMockApi } from '../mockapi/mandar';
-
+// Terminado
 const URLMP = "https://665630689f970b3b36c49525.mockapi.io/materiaPrima";
 
 const form = document.getElementById('mpForm');

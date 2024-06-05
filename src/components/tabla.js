@@ -2,7 +2,7 @@ import { LitElement, html, css } from "lit";
 import { fetchData } from "../scripts/mockapi/obtenerDatos";
 import '../scripts/mockapi/obtenerDatos';
 const URLMP = "https://665630689f970b3b36c49525.mockapi.io/materiaPrima";
-
+//terminado
 export class tablaInforme extends LitElement {
     constructor() {
         super();

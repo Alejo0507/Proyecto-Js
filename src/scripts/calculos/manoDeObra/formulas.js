@@ -1,5 +1,5 @@
 const URLC = "https://664a2109a300e8795d41126f.mockapi.io/api/1/costosindirectos";
-
+// Terminado
 // Función para calcular el salario x hora 
 
 export const calcularSalarioPorHora = (salarioBase, horasTrabajadas) => {

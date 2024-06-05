@@ -1,6 +1,6 @@
 
 const cantidad=document.getElementById('cantidadproductos')
-
+// Terminado
 
 
 

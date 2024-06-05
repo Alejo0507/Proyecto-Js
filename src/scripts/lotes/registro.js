@@ -3,7 +3,7 @@ const inventoryDiv = document.getElementById('inventoryDiv');
 const prodDiv = document.getElementById('prodDiv');
 const costosDiv = document.getElementById('prodDiv');
 const form = document.getElementById('costoForm');
-
+// Terminado
 
 costosButton.addEventListener('click', () => {
     inventoryDiv.style.display = "none";

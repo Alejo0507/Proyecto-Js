@@ -1,6 +1,6 @@
 import './formulas'
 import { calcularEficienciaOperativa, calcularProduccionEfectiva, calcularTasaDefectos } from './formulas';
-
+// Terminado
 document.addEventListener('DOMContentLoaded', () => {
 
     // DECLARACIÓN DE CONSTANTES
